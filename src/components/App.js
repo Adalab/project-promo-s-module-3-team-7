@@ -5,46 +5,46 @@ import user from '../images/user.jpeg';
 function App() {
   return <div className="App">{
     
-    <div class="container">
-      <header class="header">
-        <p class="text">Proyectos Molones</p>
+    <div className="container">
+      <header className="header">
+        <p className="text">Proyectos Molones</p>
       </header>
-      <main class="main">
-        <section class="preview">
-          <img class="image" src={cover} alt="" />
+      <main className="main">
+        <section className="preview">
+          <img className="image" src={cover} alt="" />
 
-          <section class="autor">
-            <section class="info-project">
-              <p class="subtitle">Personal Project Card</p>
-              <hr class="line" />
+          <section className="autor">
+            <section className="info-project">
+              <p className="subtitle">Personal Project Card</p>
+              <hr className="line" />
 
-              <h2 class="title">Elegant Workspace</h2>
-              <p class="slogan">Diseños Exclusivos</p>
-              <p class="desc">
+              <h2 className="title">Elegant Workspace</h2>
+              <p className="slogan">Diseños Exclusivos</p>
+              <p className="desc">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Libero, delectus? Voluptates at hic aliquam porro ad suscipit
                 harum laboriosam saepe earum doloribus aperiam, ullam culpa
                 accusantium placeat odit corrupti ipsum!
               </p>
-              <section class="technologies">
-                <p class="text">React JS, MongoDB</p>
+              <section className="technologies">
+                <p className="text">React JS, MongoDB</p>
               </section>
             </section>
 
-            <section class="info-autor">
-              <img class="image" src={user} alt="" />
-              <p class="job">Full Stack Developer</p>
-              <p class="name">Emmelie Björklund</p>
+            <section className="info-autor">
+              <img className="image" src={user} alt="" />
+              <p className="job">Full Stack Developer</p>
+              <p className="name">Emmelie Björklund</p>
             </section>
           </section>
         </section>
 
-        <section class="form">
-          <h2 class="title">Información</h2>
+        <section className="form">
+          <h2 className="title">Información</h2>
 
-          <section class="ask-info">
-            <p class="subtitle">Cuéntanos sobre el proyecto</p>
-            <hr class="line" />
+          <section className="ask-info">
+            <p className="subtitle">Cuéntanos sobre el proyecto</p>
+            <hr className="line" />
           </section>
 
           <fieldset className='project'>
@@ -124,9 +124,9 @@ function App() {
             </button>
           </section>
 
-          <section class="card">
-            <span class=""> La tarjeta ha sido creada: </span>
-            <a href="" class="" target="_blank" rel="noreferrer"> </a>
+          <section className="card">
+            <span className=""> La tarjeta ha sido creada: </span>
+            <a href="" className="" target="_blank" rel="noreferrer"> </a>
           </section>
         </section>
       </main>

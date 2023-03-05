@@ -2,12 +2,14 @@
 @import 'core/reset';
 @import 'core/mixins';
 @import 'core/animations';
+@import 'layout/autor';
 @import 'layout/header';
 @import 'layout/hero';
 @import 'layout/preview';
 @import 'layout/form';
   
   .container {
+    
     background-color: #302c42;
     height: 100vh;
     padding: 20px;
