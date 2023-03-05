@@ -47,44 +47,44 @@ function App() {
             <hr class="line" />
           </section>
 
-          <fieldset class="project">
+          <fieldset className='project'>
             <input
-              class="input"
+              className='input'
               type="text"
               placeholder="Nombre del proyecto"
               name="name"
               id="name"
             />
             <input
-              class="input"
+              className='input'
               type="text"
               name="slogan"
               id="slogan"
               placeholder="Slogan"
             />
             <input
-              class="input"
+              className='input'
               type="text"
               name="repo"
               id="repo"
               placeholder="Repo"
             />
             <input
-              class="input"
+              className='input'
               type="text"
               placeholder="Demo"
               name="demo"
               id="demo"
             />
             <input
-              class="input"
+              className='input'
               type="text"
               placeholder="Tecnologías"
               name="technologies"
               id="technologies"
             />
             <textarea
-              class="textarea"
+              className='textarea'
               type="text"
               placeholder="Descripción"
               name="desc"
@@ -92,21 +92,21 @@ function App() {
             ></textarea>
           </fieldset>
 
-          <section class="ask-info">
-            <p class="subtitle">Cuéntanos sobre la autora</p>
-            <hr class="line" />
+          <section className='ask-info'>
+            <p className='subtitle'>Cuéntanos sobre la autora</p>
+            <hr className='line'/>
           </section>
 
-          <fieldset class="autor">
+          <fieldset className='autor'>
             <input
-              class="input"
+              className='input'
               type="text"
               placeholder="Nombre"
               name="autor"
               id="autor"
             />
             <input
-              class="input"
+              className='input'
               type="text"
               placeholder="Trabajo"
               name="job"
@@ -114,11 +114,11 @@ function App() {
             />
           </fieldset>
 
-          <section class="buttons-img">
-            <button class="btn">Subir foto de proyecto</button>
-            <button class="btn">Subir foto de autora</button>
+          <section className='buttons-img'>
+            <button className='btn'>Subir foto de proyecto</button>
+            <button className='btn'>Subir foto de autora</button>
           </section>
-          <section class="buttons-img">
+          <section className='buttons-img'>
             <button class="btn-large" onClick="{handleClickCreateCard}">
               Crear Tarjeta
             </button>
