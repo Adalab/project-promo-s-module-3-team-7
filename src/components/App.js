@@ -13,28 +13,28 @@ function App() {
         <section className="preview">
           <img className="image" src={cover} alt="" />
 
-          <section className="autor">
-            <section className="info-project">
-              <p className="subtitle">Personal Project Card</p>
-              <hr className="line" />
+          <section className="author">
+            <section className="author__ip">
+              <p className="author__ip__subtitle">Personal Project Card</p>
+              <hr className="author__ip__line" />
 
-              <h2 className="title">Elegant Workspace</h2>
-              <p className="slogan">Diseños Exclusivos</p>
-              <p className="desc">
+              <h2 className="author__ip__title">Elegant Workspace</h2>
+              <p className="author__ip__slogan">Diseños Exclusivos</p>
+              <p className="author__ip__desc">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Libero, delectus? Voluptates at hic aliquam porro ad suscipit
                 harum laboriosam saepe earum doloribus aperiam, ullam culpa
                 accusantium placeat odit corrupti ipsum!
               </p>
-              <section className="technologies">
-                <p className="text">React JS, MongoDB</p>
+              <section className="author__ip__technologies">
+                <p className="author__ip__text">React JS, MongoDB</p>
               </section>
             </section>
 
-            <section className="info-autor">
-              <img className="image" src={user} alt="" />
-              <p className="job">Full Stack Developer</p>
-              <p className="name">Emmelie Björklund</p>
+            <section className="author_ia">
+              <img className="author__ia__image" src={user} alt="" />
+              <p className="author__ia__job">Full Stack Developer</p>
+              <p className="author__ia__name">Emmelie Björklund</p>
             </section>
           </section>
         </section>
