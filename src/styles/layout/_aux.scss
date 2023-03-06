@@ -2,16 +2,34 @@
 @import 'core/reset';
 @import 'core/mixins';
 @import 'core/animations';
-@import 'layout/main';
+@import 'layout/autor';
 @import 'layout/header';
 @import 'layout/hero';
-@import 'layout/autor';
+@import 'layout/preview';
 @import 'layout/form';
   
+  .container {
 
+    background-color: #302c42;
+    height: 100vh;
+    padding: 20px;
+  }
   
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   
-
+  .header .text {
+    color: white;
+  }
+  
+  .main {
+    display: flex;
+    padding-top: 50px;
+    height: 80vh;
+  }
   .main .title {
     color: #ffffff;
     text-align: center;
