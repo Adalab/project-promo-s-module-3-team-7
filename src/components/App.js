@@ -62,10 +62,14 @@ function App() {
     }
     if (inputName === "autor") {
       if (!patternName.test(inputValue)) {
+        setErrorMessageNameAuthor("*Introducir solo letras");
+      } else if (!inputValue) {
+        setErrorMessageNameAuthor("*Campo requerido");
       } else {
         setAutor(inputValue);
       }
     }
+
     if (inputName === "job") {
       setJob(inputValue);
     }
@@ -76,7 +80,7 @@ function App() {
       setImage(inputValue);
     }
   };
-  //
+
   return (
     <div className='App'>
       <div className='container'>
