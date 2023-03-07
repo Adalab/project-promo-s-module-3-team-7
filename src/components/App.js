@@ -36,7 +36,7 @@ function App() {
     if (inputName === "name") {
       setName(inputValue);
       if (!inputValue) {
-        setErrorMessage("*Campo requerido");
+        setErrorMessage("* Campo requerido");
       }
     }
     if (inputName === "slogan") {
@@ -48,13 +48,13 @@ function App() {
     if (inputName === "repo") {
       setRepo(inputValue);
       if (!inputValue) {
-        setErrorMessageRepo("*Campo requerido");
+        setErrorMessageRepo("* Campo requerido");
       }
     }
     if (inputName === "demo") {
       setDemo(inputValue);
       if (!inputValue) {
-        setErrorMessageDemo("*Campo requerido");
+        setErrorMessageDemo("* Campo requerido");
       }
     }
     if (inputName === "desc") {
@@ -62,9 +62,9 @@ function App() {
     }
     if (inputName === "autor") {
       if (!patternName.test(inputValue)) {
-        setErrorMessageNameAuthor("*Introducir solo letras");
+        setErrorMessageNameAuthor("* Introducir solo letras");
       } else if (!inputValue) {
-        setErrorMessageNameAuthor("*Campo requerido");
+        setErrorMessageNameAuthor("* Campo requerido");
       } else {
         setAutor(inputValue);
       }
@@ -153,7 +153,7 @@ function App() {
                   value={name}
                   onChange={handleInput}
                 />
-                <p>{errorMessage}</p>
+                <p className='errorMessage'>{errorMessage}</p>
                 <input
                   className='input'
                   type='text'
@@ -173,7 +173,7 @@ function App() {
                   value={repo}
                   onChange={handleInput}
                 />
-                <p>{errorMessageRepo}</p>
+                <p className='errorMessage'>{errorMessageRepo}</p>
                 <input
                   required
                   className='input'
@@ -184,7 +184,7 @@ function App() {
                   value={demo}
                   onChange={handleInput}
                 />
-                <p>{errorMessageDemo}</p>
+                <p className='errorMessage'>{errorMessageDemo}</p>
                 <input
                   className='input'
                   type='text'
@@ -220,7 +220,7 @@ function App() {
                   value={autor}
                   onChange={handleInput}
                 />
-                <p>{errorMessageNameAuthor}</p>
+                <p className='errorMessage'>{errorMessageNameAuthor}</p>
                 <input
                   className='input'
                   type='text'

@@ -6,8 +6,16 @@
     padding: 20px;
   }
   
-  .main {
-    display: flex;
-    padding-top: 50px;
-    height: 80vh;
-  }
+.main {
+  display: flex;
+  padding-top: 50px;
+  height: 80vh;
+}
+
+.errorMessage {
+  @include tablet {
+    color: #f52121;
+      font-size: 12px;
+      margin-left: 1rem;
+    }
+}
