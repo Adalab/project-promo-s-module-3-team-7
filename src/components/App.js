@@ -3,6 +3,12 @@ import cover from "../images/cover.jpeg";
 import user from "../images/user.svg";
 import { useState } from "react";
 import logoAdalab from "../images/logo-adalab.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+
+const element = <FontAwesomeIcon icon={faLaptopCode} />
+
+
 
 function App() {
   // variables de estado
@@ -86,8 +92,8 @@ function App() {
       <div className='container'>
         {/*   Header + Hero  -  Virginia */}
         <header className='header'>
-          <i className='fa-solid fa-laptop-code fa-2x'></i>
-
+          {/*<i className='fa-solid fa-laptop-code fa-2x'></i>*/}
+           <a className="header__icon">{element}</a>
           <p className='text'>Proyectos Molones</p>
           <img className='logo-adalab' src={logoAdalab} />
         </header>
