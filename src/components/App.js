@@ -18,6 +18,10 @@ const [photo, setPhoto] = useState ("");
 const [image, setImage] = useState (""); 
 
 // Funciones handle
+const handleSubmit = (ev) => {
+  ev.preventDefault();
+}
+
 const handleInput = (ev) => {
   const inputValue = ev.target.value;
   const inputName = ev.target.name; 
@@ -101,6 +105,7 @@ const handleInput = (ev) => {
           </section>
 
           <fieldset className='project'>
+            <form onSubmit={handleSubmit}>
             <input
               className='input'
               type="text"
@@ -156,6 +161,7 @@ const handleInput = (ev) => {
               onChange= {handleInput}
               
             ></textarea>
+            </form>
           </fieldset>
 
           <section className='ask-info'>
