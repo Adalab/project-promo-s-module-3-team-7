@@ -19,6 +19,10 @@ function App() {
   const [image, setImage] = useState("");
 
   // Funciones handle
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
+
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
