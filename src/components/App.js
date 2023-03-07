@@ -17,6 +17,12 @@ function App() {
   const [job, setJob] = useState("");
   const [photo, setPhoto] = useState("");
   const [image, setImage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessageDemo, setErrorMessageDemo] = useState("");
+  const [errorMessageRepo, setErrorMessageRepo] = useState("");
+  const [errorMessageNameAuthor, setErrorMessageNameAuthor] = useState("");
+
+  const patternName = new RegExp("^[A-Z]+$", "i");
 
   // Funciones handle
   const handleSubmit = (ev) => {
@@ -29,6 +35,9 @@ function App() {
 
     if (inputName === "name") {
       setName(inputValue);
+      if (!inputValue) {
+        setErrorMessage("*Campo requerido");
+      }
     }
     if (inputName === "slogan") {
       setSlogan(inputValue);
@@ -38,15 +47,24 @@ function App() {
     }
     if (inputName === "repo") {
       setRepo(inputValue);
+      if (!inputValue) {
+        setErrorMessageRepo("*Campo requerido");
+      }
     }
     if (inputName === "demo") {
       setDemo(inputValue);
+      if (!inputValue) {
+        setErrorMessageDemo("*Campo requerido");
+      }
     }
     if (inputName === "desc") {
       setDesc(inputValue);
     }
     if (inputName === "autor") {
-      setAutor(inputValue);
+      if (!patternName.test(inputValue)) {
+      } else {
+        setAutor(inputValue);
+      }
     }
     if (inputName === "job") {
       setJob(inputValue);
@@ -64,9 +82,8 @@ function App() {
       <div className='container'>
         {/*   Header + Hero  -  Virginia */}
         <header className='header'>
-          <a href=''>
-            <i class='fa-solid fa-laptop-code fa-2x'></i>
-          </a>
+          <i className='fa-solid fa-laptop-code fa-2x'></i>
+
           <p className='text'>Proyectos Molones</p>
           <img className='logo-adalab' src={logoAdalab} />
         </header>
@@ -120,98 +137,107 @@ function App() {
               <p className='subtitle'>Cuéntanos sobre el proyecto</p>
               <hr className='line' />
             </section>
+            <form onSubmit={handleSubmit}>
+              <fieldset className='project'>
+                <input
+                  required
+                  className='input'
+                  type='text'
+                  placeholder='Nombre del proyecto'
+                  name='name'
+                  id='name'
+                  value={name}
+                  onChange={handleInput}
+                />
+                <p>{errorMessage}</p>
+                <input
+                  className='input'
+                  type='text'
+                  name='slogan'
+                  id='slogan'
+                  placeholder='Slogan'
+                  value={slogan}
+                  onChange={handleInput}
+                />
+                <input
+                  required
+                  className='input'
+                  type='text'
+                  name='repo'
+                  id='repo'
+                  placeholder='Repo'
+                  value={repo}
+                  onChange={handleInput}
+                />
+                <p>{errorMessageRepo}</p>
+                <input
+                  required
+                  className='input'
+                  type='text'
+                  placeholder='Demo'
+                  name='demo'
+                  id='demo'
+                  value={demo}
+                  onChange={handleInput}
+                />
+                <p>{errorMessageDemo}</p>
+                <input
+                  className='input'
+                  type='text'
+                  placeholder='Tecnologías'
+                  name='technologies'
+                  id='technologies'
+                  value={technologies}
+                  onChange={handleInput}
+                />
+                <textarea
+                  className='textarea'
+                  type='text'
+                  placeholder='Descripción'
+                  name='desc'
+                  id='desc'
+                  value={desc}
+                  onChange={handleInput}></textarea>
+              </fieldset>
 
-            <fieldset className='project'>
-              <input
-                className='input'
-                type='text'
-                placeholder='Nombre del proyecto'
-                name='name'
-                id='name'
-                value={name}
-                onChange={handleInput}
-              />
-              <input
-                className='input'
-                type='text'
-                name='slogan'
-                id='slogan'
-                placeholder='Slogan'
-                value={slogan}
-                onChange={handleInput}
-              />
-              <input
-                className='input'
-                type='text'
-                name='repo'
-                id='repo'
-                placeholder='Repo'
-                value={repo}
-                onChange={handleInput}
-              />
-              <input
-                className='input'
-                type='text'
-                placeholder='Demo'
-                name='demo'
-                id='demo'
-                value={demo}
-                onChange={handleInput}
-              />
-              <input
-                className='input'
-                type='text'
-                placeholder='Tecnologías'
-                name='technologies'
-                id='technologies'
-                value={technologies}
-                onChange={handleInput}
-              />
-              <textarea
-                className='textarea'
-                type='text'
-                placeholder='Descripción'
-                name='desc'
-                id='desc'
-                value={desc}
-                onChange={handleInput}></textarea>
-            </fieldset>
+              <section className='ask-info'>
+                <p className='subtitle'>Cuéntanos sobre la autora</p>
+                <hr className='line' />
+              </section>
 
-            <section className='ask-info'>
-              <p className='subtitle'>Cuéntanos sobre la autora</p>
-              <hr className='line' />
-            </section>
+              <fieldset className='autor'>
+                <input
+                  required
+                  className='input'
+                  type='text'
+                  placeholder='Nombre'
+                  name='autor'
+                  id='autor'
+                  value={autor}
+                  onChange={handleInput}
+                />
+                <p>{errorMessageNameAuthor}</p>
+                <input
+                  className='input'
+                  type='text'
+                  placeholder='Trabajo'
+                  name='job'
+                  id='job'
+                  value={job}
+                  onChange={handleInput}
+                />
+              </fieldset>
 
-            <fieldset className='autor'>
-              <input
-                className='input'
-                type='text'
-                placeholder='Nombre'
-                name='autor'
-                id='autor'
-                value={autor}
-                onChange={handleInput}
-              />
-              <input
-                className='input'
-                type='text'
-                placeholder='Trabajo'
-                name='job'
-                id='job'
-                value={job}
-                onChange={handleInput}
-              />
-            </fieldset>
-
-            <section className='buttons-img'>
-              <button className='btn'>Subir foto de proyecto</button>
-              <button className='btn'>Subir foto de autora</button>
-            </section>
-            <section className='buttons-img'>
-              <button class='btn-large' onClick='{handleClickCreateCard}'>
-                Crear Tarjeta
-              </button>
-            </section>
+              <section className='buttons-img'>
+                <button className='btn'>Subir foto de proyecto</button>
+                <button className='btn'>Subir foto de autora</button>
+              </section>
+              <section className='buttons-img'>
+                <button className='btn-large' onClick='{handleClickCreateCard}'>
+                  Crear Tarjeta
+                </button>
+              </section>
+            </form>
 
             <section className='card'>
               <span className=''> La tarjeta ha sido creada: </span>
