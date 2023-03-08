@@ -93,16 +93,16 @@ const handleInput = (ev) => {
 
 {/*   Form -  Patricia */}
         <section className="form">
-          <h2 className="title">Información</h2>
+          <h2 className="form__title">Información</h2>
 
-          <section className="ask-info">
-            <p className="subtitle">Cuéntanos sobre el proyecto</p>
-            <hr className="line" />
+          <section className="form__ask-info">
+            <p className="form__ask-info__subtitle">Cuéntanos sobre el proyecto</p>
+            <hr className="form__ask-info__line" />
           </section>
 
-          <fieldset className='project'>
+          <fieldset className='form__project'>
             <input
-              className='input'
+              className='input form__project__input-name '
               type="text"
               placeholder="Nombre del proyecto"
               name="name"
@@ -111,7 +111,7 @@ const handleInput = (ev) => {
               onChange= {handleInput}
             />
             <input
-              className='input'
+              className='input form__project__input-slogan'
               type="text"
               name="slogan"
               id="slogan"
@@ -120,7 +120,7 @@ const handleInput = (ev) => {
               onChange= {handleInput}
             />
             <input
-              className='input'
+              className='input form__project__input-repo'
               type="text"
               name="repo"
               id="repo"
@@ -129,7 +129,7 @@ const handleInput = (ev) => {
               onChange= {handleInput}
             />
             <input
-              className='input'
+              className='input form__project__input-demo'
               type="text"
               placeholder="Demo"
               name="demo"
@@ -138,7 +138,7 @@ const handleInput = (ev) => {
               onChange= {handleInput}
             />
             <input
-              className='input'
+              className='input form__project__input-technologies'
               type="text"
               placeholder="Tecnologías"
               name="technologies"
@@ -147,7 +147,7 @@ const handleInput = (ev) => {
               onChange= {handleInput}
             />
             <textarea
-              className='textarea'
+              className='textarea form__project__textarea'
               type="text"
               placeholder="Descripción"
               name="desc"
@@ -158,14 +158,14 @@ const handleInput = (ev) => {
             ></textarea>
           </fieldset>
 
-          <section className='ask-info'>
-            <p className='subtitle'>Cuéntanos sobre la autora</p>
-            <hr className='line'/>
+          <section className='form__ask-info2'>
+            <p className='subtitle form__ask-info2__subtitle'>Cuéntanos sobre la autora</p>
+            <hr className='line form__ask-info2__line'/>
           </section>
 
-          <fieldset className='autor'>
+          <fieldset className='form__autor'>
             <input
-              className='input'
+              className='input form__autor__input-autor'
               type="text"
               placeholder="Nombre"
               name="autor"
@@ -174,7 +174,7 @@ const handleInput = (ev) => {
               onChange= {handleInput}
             />
             <input
-              className='input'
+              className='input form__autor__input-job'
               type="text"
               placeholder="Trabajo"
               name="job"
@@ -184,18 +184,18 @@ const handleInput = (ev) => {
             />
           </fieldset>
 
-          <section className='buttons-img'>
-            <button className='btn'>Subir foto de proyecto</button>
-            <button className='btn'>Subir foto de autora</button>
+          <section className='buttons-img form__buttons'>
+            <button className='btn form__buttons__img-p'>Subir foto de proyecto</button>
+            <button className='btn form__buttons__img-a'>Subir foto de autora</button>
           </section>
-          <section className='buttons-img'>
-            <button class="btn-large" onClick="{handleClickCreateCard}">
+          <section className='buttons-img form__buttons2'>
+            <button class="btn-large form__buttons2__img-card" onClick="{handleClickCreateCard}">
               Crear Tarjeta
             </button>
           </section>
 
-          <section className="card">
-            <span className=""> La tarjeta ha sido creada: </span>
+          <section className="card form__card">
+            <span className="form__card__card"> La tarjeta ha sido creada: </span>
             <a href="" className="" target="_blank" rel="noreferrer"> </a>
           </section>
         </section>
