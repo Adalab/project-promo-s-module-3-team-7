@@ -3,12 +3,10 @@ import cover from "../images/cover.jpeg";
 import user from "../images/user.svg";
 import { useState } from "react";
 import logoAdalab from "../images/logo-adalab.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 
-const element = <FontAwesomeIcon icon={faLaptopCode} />
-
-
+const element = <FontAwesomeIcon icon={faLaptopCode} />;
 
 function App() {
   // variables de estado
@@ -23,7 +21,7 @@ function App() {
     autor: "",
     job: "",
     photo: "",
-    image: ""
+    image: "",
   });
   const [errorMessage, setErrorMessage] = useState("");
   const [errorMessageDemo, setErrorMessageDemo] = useState("");
@@ -42,31 +40,31 @@ function App() {
     const inputName = ev.target.name;
 
     if (inputName === "name") {
-      setData({...data, name: inputValue});
+      setData({ ...data, name: inputValue });
       if (!inputValue) {
         setErrorMessage("*Campo requerido");
       }
     }
     if (inputName === "slogan") {
-      setData({...data, slogan: inputValue});
+      setData({ ...data, slogan: inputValue });
     }
     if (inputName === "technologies") {
-      setData({...data, technologies: inputValue});
+      setData({ ...data, technologies: inputValue });
     }
     if (inputName === "repo") {
-      setData({...data, repo: inputValue});
+      setData({ ...data, repo: inputValue });
       if (!inputValue) {
         setErrorMessageRepo("*Campo requerido");
       }
     }
     if (inputName === "demo") {
-      setData({...data, demo: inputValue});
+      setData({ ...data, demo: inputValue });
       if (!inputValue) {
         setErrorMessageDemo("*Campo requerido");
       }
     }
     if (inputName === "desc") {
-      setData({...data, desc: inputValue});
+      setData({ ...data, desc: inputValue });
     }
     if (inputName === "autor") {
       if (!patternName.test(inputValue)) {
@@ -74,18 +72,18 @@ function App() {
       } else if (!inputValue) {
         setErrorMessageNameAuthor("*Campo requerido");
       } else {
-        setData({...data, autor: inputValue});
+        setData({ ...data, autor: inputValue });
       }
     }
 
     if (inputName === "job") {
-      setData({...data, job: inputValue});
+      setData({ ...data, job: inputValue });
     }
     if (inputName === "photo") {
-      setData({...data, photo: inputValue});
+      setData({ ...data, photo: inputValue });
     }
     if (inputName === "image") {
-      setData({...data, image: inputValue});
+      setData({ ...data, image: inputValue });
     }
   };
 
@@ -95,13 +93,13 @@ function App() {
         {/*   Header + Hero  -  Virginia */}
         <header className='header'>
           {/*<i className='fa-solid fa-laptop-code fa-2x'></i>*/}
-           <a className="header__icon">{element}</a>
+          <a className='header__icon'>{element}</a>
           <p className='text'>Proyectos Molones</p>
           <img className='logo-adalab' src={logoAdalab} />
         </header>
         <main className='main'>
           <section className='preview'>
-            <img className='image' src={image || cover} alt='' />
+            <img className='image' src={data.image || cover} alt='' />
 
             {/*   Card -  Almu */}
             <section className='author'>
@@ -110,32 +108,36 @@ function App() {
                 <hr className='author__ip__line' />
 
                 <h2 className='author__ip__title'>
-                  {name || "Elegant Workspace"}
+                  {data.name || "Elegant Workspace"}
                 </h2>
                 <p className='author__ip__slogan'>
-                  {slogan || "Diseños Exclusivos"}
+                  {data.slogan || "Diseños Exclusivos"}
                 </p>
                 <p className='author__ip__desc'>
                   {" "}
-                  {desc ||
+                  {data.desc ||
                     `Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipit
               harum laboriosam saepe earum doloribus aperiam, ullam culpa
               accusantium placeat odit corrupti ipsum!`}
                 </p>
                 <section className='author__ip__technologies'>
                   <p className='author__ip__text'>
-                    {technologies || "React JS, MongoDB"}
+                    {data.technologies || "React JS, MongoDB"}
                   </p>
                 </section>
               </section>
 
               <section className='author__ia'>
-                <img className='author__ia__image' src={photo || user} alt='' />
+                <img
+                  className='author__ia__image'
+                  src={data.photo || user}
+                  alt=''
+                />
                 <p className='author__ia__job'>
-                  {job || "Full Stack Developer"}
+                  {data.job || "Full Stack Developer"}
                 </p>
                 <p className='author__ia__name'>
-                  {autor || "Emmelie Björklund"}
+                  {data.autor || "Emmelie Björklund"}
                 </p>
               </section>
             </section>
