@@ -13,16 +13,18 @@ const element = <FontAwesomeIcon icon={faLaptopCode} />
 function App() {
   // variables de estado
 
-  const [name, setName] = useState("");
-  const [slogan, setSlogan] = useState("");
-  const [technologies, setTechnologies] = useState("");
-  const [repo, setRepo] = useState("");
-  const [demo, setDemo] = useState("");
-  const [desc, setDesc] = useState("");
-  const [autor, setAutor] = useState("");
-  const [job, setJob] = useState("");
-  const [photo, setPhoto] = useState("");
-  const [image, setImage] = useState("");
+  const [data, setData] = useState({
+    name: "",
+    slogan: "",
+    technologies: "",
+    repo: "",
+    demo: "",
+    desc: "",
+    autor: "",
+    job: "",
+    photo: "",
+    image: ""
+  });
   const [errorMessage, setErrorMessage] = useState("");
   const [errorMessageDemo, setErrorMessageDemo] = useState("");
   const [errorMessageRepo, setErrorMessageRepo] = useState("");
@@ -40,31 +42,31 @@ function App() {
     const inputName = ev.target.name;
 
     if (inputName === "name") {
-      setName(inputValue);
+      setData({...data, name: inputValue});
       if (!inputValue) {
         setErrorMessage("*Campo requerido");
       }
     }
     if (inputName === "slogan") {
-      setSlogan(inputValue);
+      setData({...data, slogan: inputValue});
     }
     if (inputName === "technologies") {
-      setTechnologies(inputValue);
+      setData({...data, technologies: inputValue});
     }
     if (inputName === "repo") {
-      setRepo(inputValue);
+      setData({...data, repo: inputValue});
       if (!inputValue) {
         setErrorMessageRepo("*Campo requerido");
       }
     }
     if (inputName === "demo") {
-      setDemo(inputValue);
+      setData({...data, demo: inputValue});
       if (!inputValue) {
         setErrorMessageDemo("*Campo requerido");
       }
     }
     if (inputName === "desc") {
-      setDesc(inputValue);
+      setData({...data, desc: inputValue});
     }
     if (inputName === "autor") {
       if (!patternName.test(inputValue)) {
@@ -72,18 +74,18 @@ function App() {
       } else if (!inputValue) {
         setErrorMessageNameAuthor("*Campo requerido");
       } else {
-        setAutor(inputValue);
+        setData({...data, autor: inputValue});
       }
     }
 
     if (inputName === "job") {
-      setJob(inputValue);
+      setData({...data, job: inputValue});
     }
     if (inputName === "photo") {
-      setPhoto(inputValue);
+      setData({...data, photo: inputValue});
     }
     if (inputName === "image") {
-      setImage(inputValue);
+      setData({...data, image: inputValue});
     }
   };
 
@@ -156,7 +158,7 @@ function App() {
                   placeholder='Nombre del proyecto'
                   name='name'
                   id='name'
-                  value={name}
+                  value={data.name}
                   onChange={handleInput}
                 />
                 <p>{errorMessage}</p>
@@ -166,7 +168,7 @@ function App() {
                   name='slogan'
                   id='slogan'
                   placeholder='Slogan'
-                  value={slogan}
+                  value={data.slogan}
                   onChange={handleInput}
                 />
                 <input
@@ -176,7 +178,7 @@ function App() {
                   name='repo'
                   id='repo'
                   placeholder='Repo'
-                  value={repo}
+                  value={data.repo}
                   onChange={handleInput}
                 />
                 <p>{errorMessageRepo}</p>
@@ -187,7 +189,7 @@ function App() {
                   placeholder='Demo'
                   name='demo'
                   id='demo'
-                  value={demo}
+                  value={data.demo}
                   onChange={handleInput}
                 />
                 <p>{errorMessageDemo}</p>
@@ -197,7 +199,7 @@ function App() {
                   placeholder='Tecnologías'
                   name='technologies'
                   id='technologies'
-                  value={technologies}
+                  value={data.technologies}
                   onChange={handleInput}
                 />
                 <textarea
@@ -206,7 +208,7 @@ function App() {
                   placeholder='Descripción'
                   name='desc'
                   id='desc'
-                  value={desc}
+                  value={data.desc}
                   onChange={handleInput}></textarea>
               </fieldset>
 
@@ -223,7 +225,7 @@ function App() {
                   placeholder='Nombre'
                   name='autor'
                   id='autor'
-                  value={autor}
+                  value={data.autor}
                   onChange={handleInput}
                 />
                 <p>{errorMessageNameAuthor}</p>
@@ -233,7 +235,7 @@ function App() {
                   placeholder='Trabajo'
                   name='job'
                   id='job'
-                  value={job}
+                  value={data.job}
                   onChange={handleInput}
                 />
               </fieldset>
