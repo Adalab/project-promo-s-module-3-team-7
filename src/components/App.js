@@ -118,9 +118,9 @@ function App() {
                 <p className='author__ip__desc'>
                   {" "}
                   {data.desc ||
-                    `Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipit
-              harum laboriosam saepe earum doloribus aperiam, ullam culpa
-              accusantium placeat odit corrupti ipsum!`}
+                    `Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Amet faucibus commodo
+                    tellus lectus lobortis.`}
                 </p>
                 <section className='author__ip__technologies'>
                   <p className='author__ip__text'>

@@ -10,6 +10,7 @@
         }
     @include desktop {
         margin-top: 20px;
+        width: 30%;
     }
     &__title {
         text-align: center;
@@ -106,28 +107,48 @@
         text-align: center;
         color: white;
 
-        @include tablet {
-            &__line {
-                width: 100%;
-                border: 0;
-                height: 1px;
-                background-image: linear-gradient(to right,
-                rgba(255, 255, 255, 0),
-                rgba(255, 255, 255, 0.75),
-                rgba(255, 255, 255, 0));
+        &__subtitle {
+            width: 200px;
+            height: 12.1px;
+            font-size: 15px;
+            padding: 10px;
+            margin-left: 50px;
+            @include tablet {
+                margin-top: 10px;
                 }
-        }
+            }
 
-    &__subtitle {
-        width: 200px;
-        height: 12.1px;
-        font-size: 15px;
-        padding: 10px;
-        margin-left: 50px;
+
+    &__line {
+
+        width: 100%;
+        border: 0px;
+        height: 1px;
+        background-image: linear-gradient(to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0));
         @include tablet {
-            margin-top: 10px;
+            width: 100%;
+            border: 0px;
+            height: 1px;
+            background-image: linear-gradient(to right,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0));
         }
+        @include desktop {
+            width: 100%;
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0));
         }
+    }
+
+   
     }
 
 .autor {

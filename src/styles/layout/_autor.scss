@@ -8,14 +8,16 @@
   border-radius: 20px;
   display: flex;
   flex-direction: row-reverse;
-  gap: 40px;
-  padding: 30px;
+  gap: 13px;
+  padding: 22px 25px 34px 25px;
+ 
   overflow-y: scroll;
 
     @include tablet{
       width: 65%;
       height:300px;
       padding: 0px 50px;
+      gap: 22px;
     }
 
 
@@ -50,12 +52,12 @@
             
           }
         &__desc {
-            font-size: 12px;
+            font-size: 10px;
             
             color:$color-grey-2;
             @include tablet{
               margin-top: 25px;
-              font-size: 12px;
+              font-size: 8px;
               line-height: 1.76;
           
             }
@@ -114,7 +116,7 @@
         font-family: 'Catamaran';
       
         &__image {
-            margin-top: 37px;
+            
             border-radius: 50%;
             width:73px;
             height:73px;

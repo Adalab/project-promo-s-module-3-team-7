@@ -9,6 +9,12 @@ html{
     background-color: #302c42;
     height: 100vh;
     padding: 20px;
+    @include tablet {
+ 
+    }
+    @include tablet {
+ 
+    }
   }
   
   .main {
@@ -22,13 +28,17 @@ html{
       display:flex;
       flex-direction: row;
       padding-top:100px;
+      width: 100%;
+
  
     }
     @include desktop {
       display:flex;
       flex-direction: row;
-      padding-top:250px;
+      padding-top:150px;
       align-items:center;
+      width: 100vw;
+
     }
   }
 
@@ -60,10 +70,12 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:0px;
+    
   }
    
   }
+
+  
 
  
   .header__link{
