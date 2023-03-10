@@ -145,17 +145,17 @@ function App() {
 
           {/*   Form -  Patricia */}
           <section className='form'>
-            <h2 className='title'>Información</h2>
+            <h2 className='form__title'>Información</h2>
 
-            <section className='ask-info'>
-              <p className='subtitle'>Cuéntanos sobre el proyecto</p>
-              <hr className='line' />
+            <section className='form__ask-info'>
+              <p className='form__ask-info__subtitle'>Cuéntanos sobre el proyecto</p>
+              <hr className='form__ask-info__line' />
             </section>
             <form onSubmit={handleSubmit}>
               <fieldset className='project'>
                 <input
                   required
-                  className='input'
+                  className='project__input'
                   type='text'
                   placeholder='Nombre del proyecto'
                   name='name'
@@ -165,7 +165,7 @@ function App() {
                 />
                 <p>{errorMessage}</p>
                 <input
-                  className='input'
+                  className='project__input'
                   type='text'
                   name='slogan'
                   id='slogan'
@@ -175,7 +175,7 @@ function App() {
                 />
                 <input
                   required
-                  className='input'
+                  className='project__input'
                   type='text'
                   name='repo'
                   id='repo'
@@ -186,7 +186,7 @@ function App() {
                 <p>{errorMessageRepo}</p>
                 <input
                   required
-                  className='input'
+                  className='project__input'
                   type='text'
                   placeholder='Demo'
                   name='demo'
@@ -196,7 +196,7 @@ function App() {
                 />
                 <p>{errorMessageDemo}</p>
                 <input
-                  className='input'
+                  className='project__input'
                   type='text'
                   placeholder='Tecnologías'
                   name='technologies'
@@ -205,7 +205,7 @@ function App() {
                   onChange={handleInput}
                 />
                 <textarea
-                  className='textarea'
+                  className='project__textarea'
                   type='text'
                   placeholder='Descripción'
                   name='desc'
@@ -214,15 +214,15 @@ function App() {
                   onChange={handleInput}></textarea>
               </fieldset>
 
-              <section className='ask-info'>
-                <p className='subtitle'>Cuéntanos sobre la autora</p>
-                <hr className='line' />
+              <section className='ask-info__autor'>
+                <p className='ask-info__autor__subtitle'>Cuéntanos sobre la autora</p>
+                <hr className='ask-info__autor__line' />
               </section>
 
               <fieldset className='autor'>
                 <input
                   required
-                  className='input'
+                  className='autor__input'
                   type='text'
                   placeholder='Nombre'
                   name='autor'
@@ -232,7 +232,7 @@ function App() {
                 />
                 <p>{errorMessageNameAuthor}</p>
                 <input
-                  className='input'
+                  className='autor__input'
                   type='text'
                   placeholder='Trabajo'
                   name='job'
@@ -243,11 +243,11 @@ function App() {
               </fieldset>
 
               <section className='buttons-img'>
-                <button className='btn'>Subir foto de proyecto</button>
-                <button className='btn'>Subir foto de autora</button>
+                <button className='buttons-img__btn'>Subir foto de proyecto</button>
+                <button className='buttons-img__btn'>Subir foto de autora</button>
               </section>
               <section className='buttons-img'>
-                <button className='btn-large' onClick='{handleClickCreateCard}'>
+                <button className='buttons-img__btn-large' onClick='{handleClickCreateCard}'>
                   Crear Tarjeta
                 </button>
               </section>
