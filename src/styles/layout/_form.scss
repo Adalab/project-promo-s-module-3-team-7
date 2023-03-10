@@ -8,6 +8,9 @@
     @include tablet {
            margin-top: 20px;
         }
+    @include desktop {
+        margin-top: 20px;
+    }
     &__title {
         text-align: center;
         font-size: 30px;
