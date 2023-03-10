@@ -5,6 +5,8 @@ import { useState } from "react";
 import logoAdalab from "../images/logo-adalab.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import dataApi from '../services/api.js';
+
 
 const element = <FontAwesomeIcon icon={faLaptopCode} />;
 
@@ -27,10 +29,19 @@ function App() {
   const [errorMessageDemo, setErrorMessageDemo] = useState("");
   const [errorMessageRepo, setErrorMessageRepo] = useState("");
   const [errorMessageNameAuthor, setErrorMessageNameAuthor] = useState("");
+  const [url, setUrl] = useState("");
 
   const patternName = new RegExp("^[A-Z]+$", "i");
 
   // Funciones handle
+const handleClickCreateCard = (ev) => {
+  ev.preventDefault();
+  dataApi(data)
+  .then(info => {
+    setUrl(info.cardUrl);
+  })
+}
+
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
@@ -259,7 +270,7 @@ function App() {
               <section className='buttons-img'>
                 <button
                   className='buttons-img__btn-large'
-                  onClick='{handleClickCreateCard}'>
+                  onClick={handleClickCreateCard}>
                   Crear Tarjeta
                 </button>
               </section>
