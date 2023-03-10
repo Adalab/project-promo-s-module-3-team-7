@@ -93,8 +93,10 @@ function App() {
         {/*   Header + Hero  -  Virginia */}
         <header className='header'>
           {/*<i className='fa-solid fa-laptop-code fa-2x'></i>*/}
-          <a className='header__icon'>{element}</a>
-          <p className='text'>Proyectos Molones</p>
+          <div className='icon'>
+            <a className='header__icon'>{element}</a>
+            <p className='text'>Proyectos Molones</p>
+          </div>
           <img className='logo-adalab' src={logoAdalab} />
         </header>
         <main className='main'>
@@ -148,7 +150,9 @@ function App() {
             <h2 className='form__title'>Información</h2>
 
             <section className='form__ask-info'>
-              <p className='form__ask-info__subtitle'>Cuéntanos sobre el proyecto</p>
+              <p className='form__ask-info__subtitle'>
+                Cuéntanos sobre el proyecto
+              </p>
               <hr className='form__ask-info__line' />
             </section>
             <form onSubmit={handleSubmit}>
@@ -215,7 +219,9 @@ function App() {
               </fieldset>
 
               <section className='ask-info__autor'>
-                <p className='ask-info__autor__subtitle'>Cuéntanos sobre la autora</p>
+                <p className='ask-info__autor__subtitle'>
+                  Cuéntanos sobre la autora
+                </p>
                 <hr className='ask-info__autor__line' />
               </section>
 
@@ -243,11 +249,17 @@ function App() {
               </fieldset>
 
               <section className='buttons-img'>
-                <button className='buttons-img__btn'>Subir foto de proyecto</button>
-                <button className='buttons-img__btn'>Subir foto de autora</button>
+                <button className='buttons-img__btn'>
+                  Subir foto de proyecto
+                </button>
+                <button className='buttons-img__btn'>
+                  Subir foto de autora
+                </button>
               </section>
               <section className='buttons-img'>
-                <button className='buttons-img__btn-large' onClick='{handleClickCreateCard}'>
+                <button
+                  className='buttons-img__btn-large'
+                  onClick='{handleClickCreateCard}'>
                   Crear Tarjeta
                 </button>
               </section>

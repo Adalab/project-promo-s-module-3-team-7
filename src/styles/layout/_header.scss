@@ -3,15 +3,21 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  &__icon{
-    color:white;
+  color: white;
+
+  &__icon {
+    color: white;
     font-size: 40px;
   }
-  
+}
+.icon {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font: $font-poppins-ligth-14px;
 }
 
 .logo-adalab {
   width: 123px;
   height: 46px;
 }
-
