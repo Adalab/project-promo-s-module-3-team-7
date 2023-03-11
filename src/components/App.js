@@ -35,7 +35,8 @@ function App() {
   const [url, setUrl] = useState("");
   const [cardMessage, setCardMessage] = useState (''); 
 
-  const patternName = new RegExp("^[A-Z]+$", "i");
+  //const patternName = new RegExp("^[a-zA-ZÀ-ÿ\s]{1,40}$");
+  const patternName = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
 
   // Funciones handle
 const handleClickCreateCard = (ev) => {
@@ -67,6 +68,8 @@ const handleClickCreateCard = (ev) => {
       setData({ ...data, name: inputValue });
       if (!inputValue) {
         setErrorMessage("*Campo requerido");
+      } else {
+        setErrorMessage(" ");
       }
     }
     if (inputName === "slogan") {
@@ -79,24 +82,31 @@ const handleClickCreateCard = (ev) => {
       setData({ ...data, repo: inputValue });
       if (!inputValue) {
         setErrorMessageRepo("*Campo requerido");
+      } else {
+        setErrorMessageRepo(" ");
       }
     }
     if (inputName === "demo") {
       setData({ ...data, demo: inputValue });
       if (!inputValue) {
         setErrorMessageDemo("*Campo requerido");
+      } else {
+        setErrorMessageDemo(" ");
       }
     }
     if (inputName === "desc") {
       setData({ ...data, desc: inputValue });
     }
+
     if (inputName === "autor") {
-      if (!patternName.test(inputValue)) {
-        setErrorMessageNameAuthor("*Introducir solo letras");
-      } else if (!inputValue) {
+      if (!inputValue) {
         setErrorMessageNameAuthor("*Campo requerido");
-      } else {
         setData({ ...data, autor: inputValue });
+      }else if (patternName.test(inputValue)) {
+        setData({ ...data, autor: inputValue });
+        setErrorMessageNameAuthor(" ");
+      }else if (!patternName.test(inputValue)){
+        setErrorMessageNameAuthor("*Introducir solo letras");
       }
     }
 
@@ -130,7 +140,7 @@ const handleClickCreateCard = (ev) => {
             <section className='author'>
               <section className='author__ip'>
                 <p className='author__ip__subtitle'>Personal Project Card</p>
-                <hr className='author__ip__line' />
+                {/* <hr className='author__ip__line' /> */}
 
                 <h2 className='author__ip__title'>
                   {data.name || "Elegant Workspace"}
