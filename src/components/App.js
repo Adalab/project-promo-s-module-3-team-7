@@ -9,6 +9,9 @@ import dataApi from '../services/api.js';
 
 
 const element = <FontAwesomeIcon icon={faLaptopCode} />;
+const defaultPhoto = "https://www.objetivobienestar.com/uploads/s1/60/09/29/hipatia-de-alejandri-a_1_780x462.jpeg"; 
+const defaultImage = "https://mujeresconciencia.com/app/uploads/2015/06/sol.png"; 
+
 
 function App() {
   // variables de estado
@@ -30,16 +33,26 @@ function App() {
   const [errorMessageRepo, setErrorMessageRepo] = useState("");
   const [errorMessageNameAuthor, setErrorMessageNameAuthor] = useState("");
   const [url, setUrl] = useState("");
+  const [cardMessage, setCardMessage] = useState (''); 
 
   const patternName = new RegExp("^[A-Z]+$", "i");
 
   // Funciones handle
 const handleClickCreateCard = (ev) => {
   ev.preventDefault();
+ 
   dataApi(data)
   .then(info => {
-    setUrl(info.cardUrl);
-  })
+    // Esto es temporal:
+    setData({ ...data, photo: defaultPhoto, image: defaultImage});
+    if (info.success === true){
+    setUrl(info.cardURL);
+    setCardMessage ('Tu tarjeta ha sido creada');
+     console.log (url);
+    } else {
+      setCardMessage ('Faltan datos');
+    }
+  });
 }
 
   const handleSubmit = (ev) => {
@@ -103,7 +116,6 @@ const handleClickCreateCard = (ev) => {
       <div className='container'>
         {/*   Header + Hero  -  Virginia */}
         <header className='header'>
-          {/*<i className='fa-solid fa-laptop-code fa-2x'></i>*/}
           <div className='icon'>
             <a className='header__icon'>{element}</a>
             <p className='text'>Proyectos Molones</p>
@@ -277,9 +289,9 @@ const handleClickCreateCard = (ev) => {
             </form>
 
             <section className='card'>
-              <span className=''> La tarjeta ha sido creada: </span>
-              <a href='' className='' target='_blank' rel='noreferrer'>
-                {" "}
+              <span className=''></span>
+              <a href={`${url}`} className='card' target='_blank' rel='noreferrer'onSubmit={handleSubmit}>
+              {cardMessage}
               </a>
             </section>
           </section>
