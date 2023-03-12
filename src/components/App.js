@@ -68,7 +68,7 @@ const handleClickCreateCard = (ev) => {
     if (inputName === "name") {
       setData({ ...data, name: inputValue });
       if (!inputValue) {
-        setErrorMessage("* Campo requerido");
+        setErrorMessage("*Campo requerido");
       } else {
         setErrorMessage(" ");
       }
@@ -82,7 +82,7 @@ const handleClickCreateCard = (ev) => {
     if (inputName === "repo") {
       setData({ ...data, repo: inputValue });
       if (!inputValue) {
-        setErrorMessageRepo("* Campo requerido");
+        setErrorMessageRepo("*Campo requerido");
       } else {
         setErrorMessageRepo(" ");
       }
@@ -90,7 +90,7 @@ const handleClickCreateCard = (ev) => {
     if (inputName === "demo") {
       setData({ ...data, demo: inputValue });
       if (!inputValue) {
-        setErrorMessageDemo("* Campo requerido");
+        setErrorMessageDemo("*Campo requerido");
       } else {
         setErrorMessageDemo(" ");
       }
@@ -101,13 +101,13 @@ const handleClickCreateCard = (ev) => {
 
     if (inputName === "autor") {
       if (!inputValue) {
-        setErrorMessageNameAuthor("* Campo requerido");
+        setErrorMessageNameAuthor("*Campo requerido");
         setData({ ...data, autor: inputValue });
       }else if (patternName.test(inputValue)) {
         setData({ ...data, autor: inputValue });
         setErrorMessageNameAuthor(" ");
       }else if (!patternName.test(inputValue)){
-        setErrorMessageNameAuthor("* Introducir solo letras");
+        setErrorMessageNameAuthor("*Introducir solo letras");
       }
     }
 
@@ -160,8 +160,8 @@ const handleClickCreateCard = (ev) => {
                   <p className="author__ip__tech__text">
                     {data.technologies || "React JS, MongoDB"}
                   </p>
-                  <div className="author__ip__tech__icon">
-                    <a href={`${data.demo}`}  target='_blank'>
+                  <div className="author__ip__tech__icons">
+                    <a className="icon" href={`${data.demo}`}  target='_blank'>
                       <i className="fa-solid fa-globe"></i>
                     </a>
                     <a href={`${data.repo}`}  target='_blank'>
@@ -209,7 +209,7 @@ const handleClickCreateCard = (ev) => {
                   value={data.name}
                   onChange={handleInput}
                 />
-                <p className="errorMessage">{errorMessage}</p>
+                <p>{errorMessage}</p>
                 <input
                   className='project__input'
                   type='text'
@@ -229,7 +229,7 @@ const handleClickCreateCard = (ev) => {
                   value={data.repo}
                   onChange={handleInput}
                 />
-                <p className="errorMessage">{errorMessageRepo}</p>
+                <p>{errorMessageRepo}</p>
                 <input
                   required
                   className='project__input'
@@ -240,7 +240,7 @@ const handleClickCreateCard = (ev) => {
                   value={data.demo}
                   onChange={handleInput}
                 />
-                <p className="errorMessage">{errorMessageDemo}</p>
+                <p>{errorMessageDemo}</p>
                 <input
                   className='project__input'
                   type='text'
@@ -278,7 +278,7 @@ const handleClickCreateCard = (ev) => {
                   value={data.autor}
                   onChange={handleInput}
                 />
-                <p className="errorMessage">{errorMessageNameAuthor}</p>
+                <p>{errorMessageNameAuthor}</p>
                 <input
                   className='autor__input'
                   type='text'
