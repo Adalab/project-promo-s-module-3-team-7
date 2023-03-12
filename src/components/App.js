@@ -68,7 +68,7 @@ const handleClickCreateCard = (ev) => {
     if (inputName === "name") {
       setData({ ...data, name: inputValue });
       if (!inputValue) {
-        setErrorMessage("*Campo requerido");
+        setErrorMessage("* Campo requerido");
       } else {
         setErrorMessage(" ");
       }
@@ -82,7 +82,7 @@ const handleClickCreateCard = (ev) => {
     if (inputName === "repo") {
       setData({ ...data, repo: inputValue });
       if (!inputValue) {
-        setErrorMessageRepo("*Campo requerido");
+        setErrorMessageRepo("* Campo requerido");
       } else {
         setErrorMessageRepo(" ");
       }
@@ -90,7 +90,7 @@ const handleClickCreateCard = (ev) => {
     if (inputName === "demo") {
       setData({ ...data, demo: inputValue });
       if (!inputValue) {
-        setErrorMessageDemo("*Campo requerido");
+        setErrorMessageDemo("* Campo requerido");
       } else {
         setErrorMessageDemo(" ");
       }
@@ -101,13 +101,13 @@ const handleClickCreateCard = (ev) => {
 
     if (inputName === "autor") {
       if (!inputValue) {
-        setErrorMessageNameAuthor("*Campo requerido");
+        setErrorMessageNameAuthor("* Campo requerido");
         setData({ ...data, autor: inputValue });
       }else if (patternName.test(inputValue)) {
         setData({ ...data, autor: inputValue });
         setErrorMessageNameAuthor(" ");
       }else if (!patternName.test(inputValue)){
-        setErrorMessageNameAuthor("*Introducir solo letras");
+        setErrorMessageNameAuthor("* Introducir solo letras");
       }
     }
 
