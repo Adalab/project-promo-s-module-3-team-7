@@ -4,10 +4,15 @@
   justify-content: space-between;
   align-items: center;
   color: white;
+  margin-bottom: 1.5rem;
+  @include tablet {
+    margin-bottom: 6.5rem;
+  }
 
   &__icon {
     color: white;
-    font-size: 40px;
+    font-size: 2rem;
+    display: flex;
   }
   .text {
     color: rgba(255, 255, 255, 0.5);
@@ -15,12 +20,11 @@
 }
 .icon {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.5rem;
   font: $font-poppins-ligth-14px;
 }
 
 .logo-adalab {
-  width: 123px;
-  height: 46px;
+  width: 6rem;
 }
