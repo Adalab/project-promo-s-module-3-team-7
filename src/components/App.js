@@ -9,7 +9,7 @@ import dataApi from '../services/api.js';
 
 
 const element = <FontAwesomeIcon icon={faLaptopCode} />;
-const defaultPhoto = "https://www.objetivobienestar.com/uploads/s1/60/09/29/hipatia-de-alejandri-a_1_780x462.jpeg"; 
+const defaultPhoto = "https://www.cientificascasio.com/assets/img/cientificas/related/ada-lovelace.png"; 
 const defaultImage = "https://mujeresconciencia.com/app/uploads/2015/06/sol.png"; 
 
 
