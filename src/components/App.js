@@ -41,13 +41,14 @@ function App() {
   // Funciones handle
 const handleClickCreateCard = (ev) => {
   ev.preventDefault();
+    // Esto es temporal:
+  setData({ ...data, photo: defaultPhoto, image: defaultImage});
+  console.log (url);
  
   dataApi(data)
   .then(info => {
-    // Esto es temporal:
-    setData({ ...data, photo: defaultPhoto, image: defaultImage});
-    if (info.success === true){
-    setUrl(info.cardURL);
+      if (info.success === true){
+      setUrl(info.cardURL);
     setCardMessage ('Tu tarjeta ha sido creada');
      console.log (url);
     } else {
@@ -149,16 +150,24 @@ const handleClickCreateCard = (ev) => {
                   {data.slogan || "Diseños Exclusivos"}
                 </p>
                 <p className='author__ip__desc'>
-                  {" "}
+                  
                   {data.desc ||
                     `Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit. Amet faucibus commodo
                     tellus lectus lobortis.`}
                 </p>
-                <section className='author__ip__technologies'>
-                  <p className='author__ip__text'>
+                <section className='author__ip__tech'>
+                  <p className="author__ip__tech__text">
                     {data.technologies || "React JS, MongoDB"}
                   </p>
+                  <div className="author__ip__tech__icon">
+                    <a href={`${data.demo}`}  target='_blank'>
+                      <i className="fa-solid fa-globe"></i>
+                    </a>
+                    <a href={`${data.repo}`}  target='_blank'>
+                      <i className="fa-brands fa-github"></i>
+                    </a>
+                  </div>
                 </section>
               </section>
 
