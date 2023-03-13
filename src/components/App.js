@@ -128,7 +128,7 @@ const handleClickCreateCard = (ev) => {
         {/*   Header + Hero  -  Virginia */}
         <header className='header'>
           <div className='icon'>
-            <a className='header__icon'>{element}</a>
+            <a href="#" className='header__icon'>{element}</a>
             <p className='text'>Proyectos Molones</p>
           </div>
           <img className='logo-adalab' src={logoAdalab} />

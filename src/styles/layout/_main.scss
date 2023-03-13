@@ -33,18 +33,20 @@ html{
  
     }
     @include desktop {
-      display:flex;
-      flex-direction: row;
-      padding-top:150px;
-      align-items:center;
-      width: 100vw;
+      // display:flex;
+      // flex-direction: row;
+      // padding-top:150px;
+      // align-items:center;
+      // width: 100vw;
+      padding-top: 1rem;
 
     }
   }
 
   .main .image {
     object-fit: cover;
-    width: 80vw;
+    // width: 80vw;
+    width: 87vw;
     height: 80%;
     
     @include tablet {
