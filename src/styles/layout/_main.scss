@@ -27,8 +27,9 @@ html{
     @include tablet {
       display:flex;
       flex-direction: row;
-      padding-top:100px;
+      // padding-top:100px;
       width: 100%;
+      padding-top: 2rem;
 
  
     }
