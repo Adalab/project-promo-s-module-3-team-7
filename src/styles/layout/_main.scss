@@ -53,13 +53,16 @@ html{
     @include tablet {
     object-fit: cover;
     width: 100%;
-    height: 70vw;
+    // height: 70vw;
+    height: 53vw;
+    max-height: 53vw;
   
     }
     @include desktop {
       object-fit: cover;
       width: 90%;
       height: 40vw;
+          max-height: 74vh;
       
     }
   }
