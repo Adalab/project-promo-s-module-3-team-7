@@ -1,14 +1,14 @@
 import "../styles/App.scss";
-import cover from "../images/cover.jpeg";
-import user from "../images/user.svg";
 import { useState } from "react";
-import logoAdalab from "../images/logo-adalab.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 import dataApi from '../services/api.js';
+import Header from './Header';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Preview  from "./Preview";
+import Form from "./Form";
 
 
-const element = <FontAwesomeIcon icon={faLaptopCode} />;
+
+
 const defaultPhoto = "https://www.cientificascasio.com/assets/img/cientificas/related/ada-lovelace.png"; 
 const defaultImage = "https://mujeresconciencia.com/app/uploads/2015/06/sol.png"; 
 
@@ -130,199 +130,13 @@ const handleClickCreateCard = (ev) => {
     <div className='App'>
       <div className='container'>
         {/*   Header + Hero  -  Virginia */}
-        <header className='header'>
-          <div className='icon'>
-            <a href="#" className='header__icon'>{element}</a>
-            <p className='text'>Proyectos Molones</p>
-          </div>
-          <img className='logo-adalab' src={logoAdalab} />
-        </header>
+        <Header/>
+         
         <main className='main'>
-          <section className='preview'>
-            <img className='image' src={data.image || cover} alt='' />
-
-            {/*   Card -  Almu */}
-            <section className='author'>
-              <section className='author__ip'>
-                <p className='author__ip__subtitle'>Personal Project Card</p>
-                {/* <hr className='author__ip__line' /> */}
-
-                <h2 className='author__ip__title'>
-                  {data.name || "Elegant Workspace"}
-                </h2>
-                <p className='author__ip__slogan'>
-                  {data.slogan || "Diseños Exclusivos"}
-                </p>
-                <p className='author__ip__desc'>
-                  
-                  {data.desc ||
-                    `Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Amet faucibus commodo
-                    tellus lectus lobortis.`}
-                </p>
-                <section className='author__ip__tech'>
-                  <p className="author__ip__tech__text">
-                    {data.technologies || "React JS, MongoDB"}
-                  </p>
-                  <div className="author__ip__tech__icons">
-                    <a className="icon" href={`${data.demo}`}  target='_blank'>
-                      <i className="fa-solid fa-globe"></i>
-                    </a>
-                    <a href={`${data.repo}`}  target='_blank'>
-                      <i className="fa-brands fa-github"></i>
-                    </a>
-                  </div>
-                </section>
-              </section>
-
-              <section className='author__ia'>
-                <img
-                  className='author__ia__image'
-                  src={data.photo || user}
-                  alt=''
-                />
-                <p className='author__ia__job'>
-                  {data.job || "Full Stack Developer"}
-                </p>
-                <p className='author__ia__name'>
-                  {data.autor || "Emmelie Björklund"}
-                </p>
-              </section>
-            </section>
-          </section>
+         <Preview/>
 
           {/*   Form -  Patricia */}
-          <section className='form'>
-            <h2 className='form__title'>Información</h2>
-
-            <section className='form__ask-info'>
-              <p className='form__ask-info__subtitle'>
-                Cuéntanos sobre el proyecto
-              </p>
-              <hr className='form__ask-info__line' />
-            </section>
-            <form onSubmit={handleSubmit}>
-              <fieldset className='project'>
-                <input
-                  required
-                  className='project__input'
-                  type='text'
-                  placeholder='Nombre del proyecto'
-                  name='name'
-                  id='name'
-                  value={data.name}
-                  onChange={handleInput}
-                />
-                <p className="errorMessage">{errorMessageName}</p>
-                <input
-                  className='project__input'
-                  type='text'
-                  name='slogan'
-                  id='slogan'
-                  placeholder='Slogan'
-                  value={data.slogan}
-                  onChange={handleInput}
-                />
-                <p className="errorMessage">{errorMessageSlogan}</p>
-                <input
-                  required
-                  className='project__input'
-                  type='text'
-                  name='repo'
-                  id='repo'
-                  placeholder='Repo'
-                  value={data.repo}
-                  onChange={handleInput}
-                />
-                <p className="errorMessage">{errorMessageRepo}</p>
-                <input
-                  required
-                  className='project__input'
-                  type='text'
-                  placeholder='Demo'
-                  name='demo'
-                  id='demo'
-                  value={data.demo}
-                  onChange={handleInput}
-                />
-                <p className="errorMessage">{errorMessageDemo}</p>
-                <input
-                  className='project__input'
-                  type='text'
-                  placeholder='Tecnologías'
-                  name='technologies'
-                  id='technologies'
-                  value={data.technologies}
-                  onChange={handleInput}
-                />
-                <p className="errorMessage">{errorMessageTech}</p>
-                <textarea
-                  className='project__textarea'
-                  type='text'
-                  placeholder='Descripción'
-                  name='desc'
-                  id='desc'
-                  value={data.desc}
-                  onChange={handleInput}></textarea>
-                  <p className="errorMessage">{errorMessageDesc}</p>
-              </fieldset>
-
-              <section className='ask-info__autor'>
-                <p className='ask-info__autor__subtitle'>
-                  Cuéntanos sobre la autora
-                </p>
-                <hr className='ask-info__autor__line' />
-              </section>
-
-              <fieldset className='autor'>
-                <input
-                  required
-                  className='autor__input'
-                  type='text'
-                  placeholder='Nombre'
-                  name='autor'
-                  id='autor'
-                  value={data.autor}
-                  onChange={handleInput}
-                />
-                <p className="errorMessage">{errorMessageNameAuthor}</p>
-                <input
-                  className='autor__input'
-                  type='text'
-                  placeholder='Trabajo'
-                  name='job'
-                  id='job'
-                  value={data.job}
-                  onChange={handleInput}
-                />
-                <p className="errorMessage">{errorMessageJob}</p>
-              </fieldset>
-
-              <section className='buttons-img'>
-                <button className='buttons-img__btn'>
-                  Subir foto de proyecto
-                </button>
-                <button className='buttons-img__btn'>
-                  Subir foto de autora
-                </button>
-              </section>
-              <section className='buttons-img'>
-                <button
-                  className='buttons-img__btn-large'
-                  onClick={handleClickCreateCard}>
-                  Crear Tarjeta
-                </button>
-                <p className="errorMessage">{errorMessagePhoto}</p>
-                <p className="errorMessage">{errorMessageImage}</p>
-              </section>
-              <section className='card'>
-              <span className=''></span>
-              <a href={`${url}`} className='card' target='_blank' rel='noreferrer'onSubmit={handleSubmit}>
-              {cardMessage}
-              </a>
-            </section>
-            </form>
-          </section>
+          <Form/>
         </main>
       </div>
     </div>
