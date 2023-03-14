@@ -28,10 +28,16 @@ function App() {
     photo: "",
     image: "",
   });
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessageName, setErrorMessageName] = useState("");
+  const [errorMessageSlogan, setErrorMessageSlogan] = useState("");
   const [errorMessageDemo, setErrorMessageDemo] = useState("");
   const [errorMessageRepo, setErrorMessageRepo] = useState("");
+  const [errorMessageTech, setErrorMessageTech] = useState("");
+  const [errorMessageDesc, setErrorMessageDesc] = useState("");
   const [errorMessageNameAuthor, setErrorMessageNameAuthor] = useState("");
+  const [errorMessageJob, setErrorMessageJob] = useState("");
+  const [errorMessageImage, setErrorMessageImage] = useState("");
+  const [errorMessagePhoto, setErrorMessagePhoto] = useState("");
   const [url, setUrl] = useState("");
   const [cardMessage, setCardMessage] = useState (''); 
 
@@ -61,50 +67,37 @@ const handleClickCreateCard = (ev) => {
     ev.preventDefault();
   };
 
+     
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
+    setData ({...data, [inputName]: inputValue}); 
 
     if (inputName === "name") {
-      setData({ ...data, name: inputValue });
-      if (!inputValue) {
-        setErrorMessage("* Campo requerido");
-      } else {
-        setErrorMessage(" ");
-      }
+      validateRequired (inputValue,setErrorMessageName)
     }
     if (inputName === "slogan") {
-      setData({ ...data, slogan: inputValue });
+      validateRequired (inputValue,setErrorMessageSlogan)
     }
     if (inputName === "technologies") {
-      setData({ ...data, technologies: inputValue });
+      validateRequired (inputValue,setErrorMessageTech)
     }
     if (inputName === "repo") {
-      setData({ ...data, repo: inputValue });
-      if (!inputValue) {
-        setErrorMessageRepo("* Campo requerido");
-      } else {
-        setErrorMessageRepo(" ");
-      }
+      validateRequired (inputValue,setErrorMessageRepo)
+      // añadir otra validacion
     }
     if (inputName === "demo") {
-      setData({ ...data, demo: inputValue });
-      if (!inputValue) {
-        setErrorMessageDemo("* Campo requerido");
-      } else {
-        setErrorMessageDemo(" ");
-      }
+      validateRequired (inputValue,setErrorMessageDemo)
     }
     if (inputName === "desc") {
-      setData({ ...data, desc: inputValue });
+      validateRequired (inputValue,setErrorMessageDesc)
     }
 
     if (inputName === "autor") {
-      if (!inputValue) {
-        setErrorMessageNameAuthor("* Campo requerido");
-        setData({ ...data, autor: inputValue });
-      }else if (patternName.test(inputValue)) {
-        setData({ ...data, autor: inputValue });
+      validateRequired (inputValue,setErrorMessageNameAuthor)
+        
+      if (patternName.test(inputValue)) {
+       
         setErrorMessageNameAuthor(" ");
       }else if (!patternName.test(inputValue)){
         setErrorMessageNameAuthor("* Introducir solo letras");
@@ -112,15 +105,26 @@ const handleClickCreateCard = (ev) => {
     }
 
     if (inputName === "job") {
-      setData({ ...data, job: inputValue });
+      validateRequired (inputValue,setErrorMessageJob)
     }
     if (inputName === "photo") {
-      setData({ ...data, photo: inputValue });
+      validateRequired (inputValue,setErrorMessagePhoto)
     }
     if (inputName === "image") {
-      setData({ ...data, image: inputValue });
+      validateRequired (inputValue,setErrorMessageImage)
     }
   };
+
+
+   
+   const validateRequired = (inputValue,setError) =>{
+      if (!inputValue) {
+        return setError("* Campo requerido");
+      } else {
+        return setError(" ");
+      }
+   }
+
 
   return (
     <div className='App'>
@@ -209,7 +213,7 @@ const handleClickCreateCard = (ev) => {
                   value={data.name}
                   onChange={handleInput}
                 />
-                <p className="errorMessage">{errorMessage}</p>
+                <p className="errorMessage">{errorMessageName}</p>
                 <input
                   className='project__input'
                   type='text'
@@ -219,6 +223,7 @@ const handleClickCreateCard = (ev) => {
                   value={data.slogan}
                   onChange={handleInput}
                 />
+                <p className="errorMessage">{errorMessageSlogan}</p>
                 <input
                   required
                   className='project__input'
@@ -250,6 +255,7 @@ const handleClickCreateCard = (ev) => {
                   value={data.technologies}
                   onChange={handleInput}
                 />
+                <p className="errorMessage">{errorMessageTech}</p>
                 <textarea
                   className='project__textarea'
                   type='text'
@@ -258,6 +264,7 @@ const handleClickCreateCard = (ev) => {
                   id='desc'
                   value={data.desc}
                   onChange={handleInput}></textarea>
+                  <p className="errorMessage">{errorMessageDesc}</p>
               </fieldset>
 
               <section className='ask-info__autor'>
@@ -288,6 +295,7 @@ const handleClickCreateCard = (ev) => {
                   value={data.job}
                   onChange={handleInput}
                 />
+                <p className="errorMessage">{errorMessageJob}</p>
               </fieldset>
 
               <section className='buttons-img'>
@@ -304,6 +312,8 @@ const handleClickCreateCard = (ev) => {
                   onClick={handleClickCreateCard}>
                   Crear Tarjeta
                 </button>
+                <p className="errorMessage">{errorMessagePhoto}</p>
+                <p className="errorMessage">{errorMessageImage}</p>
               </section>
               <section className='card'>
               <span className=''></span>
