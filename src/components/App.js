@@ -305,14 +305,13 @@ const handleClickCreateCard = (ev) => {
                   Crear Tarjeta
                 </button>
               </section>
-            </form>
-
-            <section className='card'>
+              <section className='card'>
               <span className=''></span>
               <a href={`${url}`} className='card' target='_blank' rel='noreferrer'onSubmit={handleSubmit}>
               {cardMessage}
               </a>
             </section>
+            </form>
           </section>
         </main>
       </div>
