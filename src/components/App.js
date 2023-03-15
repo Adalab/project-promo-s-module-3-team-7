@@ -41,7 +41,8 @@ function App() {
   });
 
   const [url, setUrl] = useState("");
-  const [cardMessage, setCardMessage] = useState (''); 
+  const [cardMessage, setCardMessage] = useState ('');
+  const [errorMessageCard, setErrorMessageCard] = useState('');
 
   //const patternName = new RegExp("^[a-zA-ZÀ-ÿ\s]{1,40}$");
   const patternName = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
@@ -58,9 +59,10 @@ function App() {
         if (info.success === true) {
           setUrl(info.cardURL);
           setCardMessage ('Tu tarjeta ha sido creada');
+          setErrorMessageCard('')
           console.log (url);
         } else {
-          setCardMessage ('Faltan datos');
+          setErrorMessageCard('Faltan datos, por favor rellena todos los campos');
         }
     });
   };
@@ -72,26 +74,26 @@ function App() {
     setData({...data, [inputName]: inputValue}); 
 
     if (inputName === "name") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired (inputValue)
     }
     if (inputName === "slogan") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired (inputValue)
     }
     if (inputName === "technologies") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired (inputValue)
     }
     if (inputName === "repo") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired (inputValue)
       // añadir otra validacion
     }
     if (inputName === "demo") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired (inputValue)
     }
     if (inputName === "desc") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired (inputValue)
     }
     if (inputName === "autor") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired (inputValue)
       if (patternName.test(inputValue)) {
         setErrorMessage(" ");
       } else if (!patternName.test(inputValue)){
@@ -99,23 +101,23 @@ function App() {
       }
     }
     if (inputName === "job") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired (inputValue)
     }
     if (inputName === "photo") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired (inputValue)
     }
     if (inputName === "image") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired (inputValue)
     }
   };
 
 
    
-  const validateRequired = (inputValue,setError) => {
+  const validateRequired = (inputValue) => {
     if (!inputValue) {
-      return setError("* Campo requerido");
+      return setErrorMessage("* Campo requerido");
     } else {
-      return setError(" ");
+      return setErrorMessage(" ");
     }
   };
 
@@ -138,6 +140,8 @@ function App() {
           errorMessage={errorMessage}
           url={url}
           cardMessage={cardMessage}
+          handleClickCreateCard={handleClickCreateCard}
+          errorMessageCard={errorMessageCard}
           />
         </main>
         

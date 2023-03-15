@@ -1,7 +1,7 @@
 // import '../styles/layout/Form.scss';
 import Button from "./Button";
 
-function Form ({handleInput, data, errorMessage, url, cardMessage}) {
+function Form ({handleInput, data, errorMessage, url, cardMessage, handleClickCreateCard, errorMessageCard}) {
 
   const handleInputChange = (ev) => {
     handleInput(ev.target.value, ev.target.name)
@@ -140,11 +140,13 @@ function Form ({handleInput, data, errorMessage, url, cardMessage}) {
               <Button
               className='buttons-img__btn'
               text= 'Subir foto de proyecto'
+              handleClickCreateCard={handleClickCreateCard}
               />
               {/*lifting */}
               <Button
               className='buttons-img__btn'
               text= 'Subir foto de autora'
+              handleClickCreateCard={handleClickCreateCard}
               />
 
             </section>
@@ -152,7 +154,7 @@ function Form ({handleInput, data, errorMessage, url, cardMessage}) {
               <Button
               className='buttons-img__btn-large'
               text= 'Crear Tarjeta'
-              // onClick={handleClickCreateCard}
+              handleClickCreateCard={handleClickCreateCard}
               />
 
               <p className="errorMessage">
@@ -172,6 +174,9 @@ function Form ({handleInput, data, errorMessage, url, cardMessage}) {
               onSubmit={handleSubmit}>
                 {cardMessage}
               </a>
+              <p className="errorMessage">
+                {errorMessageCard}
+              </p>
             </section>
           </form>
         </section>

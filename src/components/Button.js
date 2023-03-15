@@ -1,7 +1,10 @@
 
-function Button ({className,text}) {
+function Button ({className,text, handleClickCreateCard}) {
     return (
-        <button className={className}>
+        <button 
+        className={className}
+        onClick={handleClickCreateCard}
+        >
             {text}
         </button>
         );

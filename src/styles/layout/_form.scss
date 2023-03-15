@@ -259,11 +259,10 @@
       }
  }
  .card {
-     color: white;
-     text-align: center;
-     padding: 20px;
+    margin-top: 2rem;
+    color: white;
+    text-align: center;
+    //  padding: 20px;
     @include tablet {
-
     }
  }
-
