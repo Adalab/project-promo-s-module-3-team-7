@@ -28,6 +28,7 @@ function App() {
     photo: "",
     image: "",
   });
+
   const [errorMessageName, setErrorMessageName] = useState("");
   const [errorMessageSlogan, setErrorMessageSlogan] = useState("");
   const [errorMessageDemo, setErrorMessageDemo] = useState("");
@@ -45,23 +46,23 @@ function App() {
   const patternName = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
 
   // Funciones handle
-const handleClickCreateCard = (ev) => {
-  ev.preventDefault();
-    // Esto es temporal:
-  setData({ ...data, photo: defaultPhoto, image: defaultImage});
-  console.log (url);
+  const handleClickCreateCard = (ev) => {
+    ev.preventDefault();
+      // Esto es temporal:
+    setData({ ...data, photo: defaultPhoto, image: defaultImage});
+    console.log (url);
  
-  dataApi(data)
-  .then(info => {
-      if (info.success === true){
-      setUrl(info.cardURL);
-    setCardMessage ('Tu tarjeta ha sido creada');
-     console.log (url);
-    } else {
-      setCardMessage ('Faltan datos');
-    }
-  });
-}
+    dataApi(data)
+      .then(info => {
+        if (info.success === true) {
+          setUrl(info.cardURL);
+          setCardMessage ('Tu tarjeta ha sido creada');
+          console.log (url);
+        } else {
+          setCardMessage ('Faltan datos');
+        }
+    });
+  };
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -92,18 +93,14 @@ const handleClickCreateCard = (ev) => {
     if (inputName === "desc") {
       validateRequired (inputValue,setErrorMessageDesc)
     }
-
     if (inputName === "autor") {
       validateRequired (inputValue,setErrorMessageNameAuthor)
-        
       if (patternName.test(inputValue)) {
-       
         setErrorMessageNameAuthor(" ");
-      }else if (!patternName.test(inputValue)){
+      } else if (!patternName.test(inputValue)){
         setErrorMessageNameAuthor("* Introducir solo letras");
       }
     }
-
     if (inputName === "job") {
       validateRequired (inputValue,setErrorMessageJob)
     }
@@ -117,13 +114,13 @@ const handleClickCreateCard = (ev) => {
 
 
    
-   const validateRequired = (inputValue,setError) =>{
-      if (!inputValue) {
-        return setError("* Campo requerido");
-      } else {
-        return setError(" ");
-      }
-   }
+  const validateRequired = (inputValue,setError) => {
+    if (!inputValue) {
+      return setError("* Campo requerido");
+    } else {
+      return setError(" ");
+    }
+  };
 
 
   return (
@@ -141,6 +138,6 @@ const handleClickCreateCard = (ev) => {
       </div>
     </div>
   );
-}
+};
 
 export default App;

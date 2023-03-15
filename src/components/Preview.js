@@ -3,12 +3,14 @@
  import Card from "./Card";
 
  function Preview () {
-    return ( <section className='preview'>
-            <img className='image' src={data.image || cover} alt='' />
+    return ( 
+        <section className='preview'>
+          <img className='image' src={data.image || cover} alt='' />
 
-            {/*   Card -  Almu */}
-            <Card/>
-          </section>
-          );
- }
+          {/*   Card -  Almu */}
+          <Card/>
+        </section>
+    );
+ };
+
  export default Preview;
