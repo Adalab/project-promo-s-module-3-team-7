@@ -69,7 +69,7 @@ function App() {
 
      
   const handleInput = (inputValue, inputName) => {
-    // setData({...data, [inputName]: inputValue}); 
+    setData({...data, [inputName]: inputValue}); 
 
     if (inputName === "name") {
       validateRequired (inputValue,setErrorMessage)

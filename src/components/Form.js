@@ -44,7 +44,7 @@ function Form ({handleInput, data, errorMessage, url, cardMessage}) {
               id='slogan'
               placeholder='Slogan'
               value={data.slogan}
-              onChange={handleInput}
+              onChange={handleInputChange}
               />
               <p className="errorMessage">
                 {errorMessage.slogan}
@@ -57,7 +57,7 @@ function Form ({handleInput, data, errorMessage, url, cardMessage}) {
               id='repo'
               placeholder='Repo'
               value={data.repo}
-              onChange={handleInput}
+              onChange={handleInputChange}
               />
               <p className="errorMessage">
                 {errorMessage.repo}
@@ -70,7 +70,7 @@ function Form ({handleInput, data, errorMessage, url, cardMessage}) {
               name='demo'
               id='demo'
               value={data.demo}
-              onChange={handleInput}
+              onChange={handleInputChange}
               />
               <p className="errorMessage">
                 {errorMessage.demo}
@@ -82,7 +82,7 @@ function Form ({handleInput, data, errorMessage, url, cardMessage}) {
               name='technologies'
               id='technologies'
               value={data.technologies}
-              onChange={handleInput}
+              onChange={handleInputChange}
               />
               <p className="errorMessage">
                 {errorMessage.tech}
@@ -94,7 +94,7 @@ function Form ({handleInput, data, errorMessage, url, cardMessage}) {
               name='desc'
               id='desc'
               value={data.desc}
-              onChange={handleInput}>
+              onChange={handleInputChange}>
               </textarea>
               <p className="errorMessage">
                 {errorMessage.desc}
@@ -117,7 +117,7 @@ function Form ({handleInput, data, errorMessage, url, cardMessage}) {
               name='autor'
               id='autor'
               value={data.autor}
-              onChange={handleInput}
+              onChange={handleInputChange}
               />
               <p className="errorMessage">
                 {errorMessage.autor}
@@ -129,7 +129,7 @@ function Form ({handleInput, data, errorMessage, url, cardMessage}) {
               name='job'
               id='job'
               value={data.job}
-              onChange={handleInput}
+              onChange={handleInputChange}
               />
               <p className="errorMessage">
                 {errorMessage.job}
