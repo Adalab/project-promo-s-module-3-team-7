@@ -5,9 +5,7 @@ import Header from './Header';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Preview  from "./Preview";
 import Form from "./Form";
-
-
-
+import Footer from "./Footer";
 
 const defaultPhoto = "https://www.cientificascasio.com/assets/img/cientificas/related/ada-lovelace.png"; 
 const defaultImage = "https://mujeresconciencia.com/app/uploads/2015/06/sol.png"; 
@@ -42,16 +40,6 @@ function App() {
     image: "",
   });
 
-  // const [errorMessageName, setErrorMessageName] = useState("");
-  // const [errorMessageSlogan, setErrorMessageSlogan] = useState("");
-  // const [errorMessageDemo, setErrorMessageDemo] = useState("");
-  // const [errorMessageRepo, setErrorMessageRepo] = useState("");
-  // const [errorMessageTech, setErrorMessageTech] = useState("");
-  // const [errorMessageDesc, setErrorMessageDesc] = useState("");
-  // const [errorMessageNameAuthor, setErrorMessageNameAuthor] = useState("");
-  // const [errorMessageJob, setErrorMessageJob] = useState("");
-  // const [errorMessageImage, setErrorMessageImage] = useState("");
-  // const [errorMessagePhoto, setErrorMessagePhoto] = useState("");
   const [url, setUrl] = useState("");
   const [cardMessage, setCardMessage] = useState (''); 
 
@@ -152,7 +140,9 @@ function App() {
           cardMessage={cardMessage}
           />
         </main>
+        
       </div>
+      <Footer />
     </div>
   );
 };
