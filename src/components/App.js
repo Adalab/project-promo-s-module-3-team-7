@@ -29,16 +29,29 @@ function App() {
     image: "",
   });
 
-  const [errorMessageName, setErrorMessageName] = useState("");
-  const [errorMessageSlogan, setErrorMessageSlogan] = useState("");
-  const [errorMessageDemo, setErrorMessageDemo] = useState("");
-  const [errorMessageRepo, setErrorMessageRepo] = useState("");
-  const [errorMessageTech, setErrorMessageTech] = useState("");
-  const [errorMessageDesc, setErrorMessageDesc] = useState("");
-  const [errorMessageNameAuthor, setErrorMessageNameAuthor] = useState("");
-  const [errorMessageJob, setErrorMessageJob] = useState("");
-  const [errorMessageImage, setErrorMessageImage] = useState("");
-  const [errorMessagePhoto, setErrorMessagePhoto] = useState("");
+  const [errorMessage, setErrorMessage] = useState({
+    name: "",
+    slogan: "",
+    technologies: "",
+    repo: "",
+    demo: "",
+    desc: "",
+    autor: "",
+    job: "",
+    photo: "",
+    image: "",
+  });
+
+  // const [errorMessageName, setErrorMessageName] = useState("");
+  // const [errorMessageSlogan, setErrorMessageSlogan] = useState("");
+  // const [errorMessageDemo, setErrorMessageDemo] = useState("");
+  // const [errorMessageRepo, setErrorMessageRepo] = useState("");
+  // const [errorMessageTech, setErrorMessageTech] = useState("");
+  // const [errorMessageDesc, setErrorMessageDesc] = useState("");
+  // const [errorMessageNameAuthor, setErrorMessageNameAuthor] = useState("");
+  // const [errorMessageJob, setErrorMessageJob] = useState("");
+  // const [errorMessageImage, setErrorMessageImage] = useState("");
+  // const [errorMessagePhoto, setErrorMessagePhoto] = useState("");
   const [url, setUrl] = useState("");
   const [cardMessage, setCardMessage] = useState (''); 
 
@@ -64,51 +77,47 @@ function App() {
     });
   };
 
-  const handleSubmit = (ev) => {
-    ev.preventDefault();
-  };
+  
 
      
-  const handleInput = (ev) => {
-    const inputValue = ev.target.value;
-    const inputName = ev.target.name;
-    setData ({...data, [inputName]: inputValue}); 
+  const handleInput = (inputValue, inputName) => {
+    // setData({...data, [inputName]: inputValue}); 
 
     if (inputName === "name") {
-      validateRequired (inputValue,setErrorMessageName)
+      validateRequired (inputValue,setErrorMessage)
     }
     if (inputName === "slogan") {
-      validateRequired (inputValue,setErrorMessageSlogan)
+      validateRequired (inputValue,setErrorMessage)
     }
     if (inputName === "technologies") {
-      validateRequired (inputValue,setErrorMessageTech)
+      validateRequired (inputValue,setErrorMessage)
     }
     if (inputName === "repo") {
-      validateRequired (inputValue,setErrorMessageRepo)
+      validateRequired (inputValue,setErrorMessage)
       // añadir otra validacion
     }
     if (inputName === "demo") {
-      validateRequired (inputValue,setErrorMessageDemo)
+      validateRequired (inputValue,setErrorMessage)
     }
     if (inputName === "desc") {
-      validateRequired (inputValue,setErrorMessageDesc)
+      validateRequired (inputValue,setErrorMessage)
     }
     if (inputName === "autor") {
-      validateRequired (inputValue,setErrorMessageNameAuthor)
+      validateRequired (inputValue,setErrorMessage)
       if (patternName.test(inputValue)) {
-        setErrorMessageNameAuthor(" ");
+        setErrorMessage(" ");
       } else if (!patternName.test(inputValue)){
-        setErrorMessageNameAuthor("* Introducir solo letras");
+        setErrorMessage("* Introducir solo letras");
       }
     }
     if (inputName === "job") {
-      validateRequired (inputValue,setErrorMessageJob)
+      validateRequired (inputValue,setErrorMessage)
     }
     if (inputName === "photo") {
-      validateRequired (inputValue,setErrorMessagePhoto)
+      validateRequired (inputValue,setErrorMessage)
     }
     if (inputName === "image") {
-      validateRequired (inputValue,setErrorMessageImage)
+      validateRequired (inputValue,setErrorMessage)
     }
   };
 
@@ -126,14 +135,22 @@ function App() {
   return (
     <div className='App'>
       <div className='container'>
-        {/*   Header + Hero  -  Virginia */}
+
         <Header/>
          
         <main className='main'>
-         <Preview/>
+         <Preview 
+         data={data}
+         />
 
           {/*   Form -  Patricia */}
-          <Form/>
+          <Form 
+          handleInput={handleInput}
+          data={data}
+          errorMessage={errorMessage}
+          url={url}
+          cardMessage={cardMessage}
+          />
         </main>
       </div>
     </div>

@@ -1,7 +1,7 @@
- import 'layout/card';
+//  import 'layout/card';
  import user from "../images/user.svg";
 
-function Card () {
+function Card ({data}) {
     return (
         <section className='author'>
           <section className='author__ip'>

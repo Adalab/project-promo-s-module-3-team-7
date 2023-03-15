@@ -3,13 +3,9 @@
 @import 'core/mixins';
 @import 'core/animations';
 @import 'layout/main';
-@import 'layout/hero';
-
-
-  
-
-  
-  
+@import 'layout/header';
+@import 'layout/card';
+@import 'layout/form';
 
   .main .title {
     color: #ffffff;

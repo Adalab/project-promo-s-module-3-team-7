@@ -1,7 +1,15 @@
-import 'layout/form';
+// import '../styles/layout/Form.scss';
 import Button from "./Button";
 
-function Form () {
+function Form ({handleInput, data, errorMessage, url, cardMessage}) {
+
+  const handleInputChange = (ev) => {
+    handleInput(ev.target.value, ev.target.name)
+  };
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
     return ( 
         <section className='form'>
           <h2 className='form__title'>
@@ -24,10 +32,10 @@ function Form () {
               name='name'
               id='name'
               value={data.name}
-              onChange={handleInput}
+              onChange={handleInputChange}
               />
               <p className="errorMessage">
-                {errorMessageName}
+                {errorMessage.name}
               </p>
               <input
               className='project__input'
@@ -39,7 +47,7 @@ function Form () {
               onChange={handleInput}
               />
               <p className="errorMessage">
-                {errorMessageSlogan}
+                {errorMessage.slogan}
               </p>
               <input
               required
@@ -52,7 +60,7 @@ function Form () {
               onChange={handleInput}
               />
               <p className="errorMessage">
-                {errorMessageRepo}
+                {errorMessage.repo}
               </p>
               <input
               required
@@ -65,7 +73,7 @@ function Form () {
               onChange={handleInput}
               />
               <p className="errorMessage">
-                {errorMessageDemo}
+                {errorMessage.demo}
               </p>
               <input
               className='project__input'
@@ -77,7 +85,7 @@ function Form () {
               onChange={handleInput}
               />
               <p className="errorMessage">
-                {errorMessageTech}
+                {errorMessage.tech}
                 </p>
               <textarea
               className='project__textarea'
@@ -89,7 +97,7 @@ function Form () {
               onChange={handleInput}>
               </textarea>
               <p className="errorMessage">
-                {errorMessageDesc}
+                {errorMessage.desc}
               </p>
             </fieldset>
 
@@ -112,7 +120,7 @@ function Form () {
               onChange={handleInput}
               />
               <p className="errorMessage">
-                {errorMessageNameAuthor}
+                {errorMessage.autor}
               </p>
               <input
               className='autor__input'
@@ -124,7 +132,7 @@ function Form () {
               onChange={handleInput}
               />
               <p className="errorMessage">
-                {errorMessageJob}
+                {errorMessage.job}
               </p>
             </fieldset>
 
@@ -144,14 +152,14 @@ function Form () {
               <Button
               className='buttons-img__btn-large'
               text= 'Crear Tarjeta'
-              onClick={handleClickCreateCard}
+              // onClick={handleClickCreateCard}
               />
 
               <p className="errorMessage">
-                {errorMessagePhoto}
+                {errorMessage.photo}
               </p>
               <p className="errorMessage">
-                {errorMessageImage}
+                {errorMessage.image}
               </p>
             </section>
             <section className='card'>

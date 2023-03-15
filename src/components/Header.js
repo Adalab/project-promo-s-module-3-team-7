@@ -1,4 +1,4 @@
-import 'layout/header';
+// import 'layout/header';
 import logoAdalab from "../images/logo-adalab.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
