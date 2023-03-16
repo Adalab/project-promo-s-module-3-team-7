@@ -10,6 +10,7 @@ import Landing from "./Landing";
 
 
 
+
 const defaultPhoto = "https://www.cientificascasio.com/assets/img/cientificas/related/ada-lovelace.png"; 
 const defaultImage = "https://mujeresconciencia.com/app/uploads/2015/06/sol.png"; 
 
@@ -62,6 +63,15 @@ function CreateProject() {
         if (info.success === true) {
           setUrl(info.cardURL);
           setCardMessage ('Tu tarjeta ha sido creada');
+          
+        
+          // Cojo datos de LS
+         
+          // Añado el nuevo proy
+          //ls.set('projectsLS', data);
+          // Vuelvo a guardar en el LS
+          
+
           console.log (url);
         } else {
           setCardMessage ('Faltan datos');

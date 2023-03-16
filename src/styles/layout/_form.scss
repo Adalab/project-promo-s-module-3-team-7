@@ -1,16 +1,18 @@
 .form {
     // margin-top: 100px;
-    margin-top: 8rem;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    border: solid 1px rgba(0, 0, 0, 0);
-    background-image: radial-gradient(circle at 50% 50%, #403a5f, #211e2e 92%);
+    margin-top: 4rem;
+    //box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    //border: solid 1px rgba(0, 0, 0, 0);
+    //background-image: radial-gradient(circle at 50% 50%, #403a5f, #211e2e 92%);
+    background-color: aquamarine;
     font-family: 'Montserrat';
+    width:100%; 
     @include tablet {
         width: 40%;
         margin-bottom: 90px;
         }
     @include desktop {
-        width: 330px;
+        //width: 330px;
         width: 40%;
         margin-bottom: 40px;
         margin-top: 14rem;
@@ -37,7 +39,8 @@
     }
 
     &__ask-info {
-        padding: 20px;
+        //padding: 20px;
+        margin-top: 10px;
         text-align: center;
         color: white;
         @include tablet {
@@ -45,11 +48,13 @@
         }
 
         &__subtitle {
-            width: 200px;
-            height: 12.1px;
+            //width: 200px;
+            //height: 12.1px;
             font-size: 15px;
-            padding-bottom: 10px;
-            margin-left: 20px;
+            margin-top: 10px; 
+            margin-bottom: 10px; 
+            //padding-bottom: 10px;
+            //margin-left: 20px;
             @include tablet {
                 margin-left: 20px;
 
@@ -82,8 +87,9 @@
 .project {
     display: flex;
     flex-direction: column;
+    width:100%; 
     border: none;
-    width: 40%;
+    //width: 40%;
     @include tablet {
 
     }
@@ -91,19 +97,24 @@
     &__input {
         font: $font-montserrat-light-15px;
         font-size: 12px;
-        width: 245 vw;
-        height: 32.3px;
+        //width: 245 vw;
+        height: 30px;
+        width:90%; 
+        margin-bottom: 8px;
+        margin:auto; 
         background-color: #302c42;
         border-color: white;
-        border-radius: 40px;
+        margin-bottom: 8px;
+        border-radius: 20px;
         height: 42.72px;
         color: #ffffff;
         border: solid 2px;
-        margin-left: 10px;
+        //margin-left: 10px;
         padding-left: 10px;
         @include tablet {
-            width: 260px;
-            margin-left: 10px;
+            //width: 260px;
+            //margin-left: 10px;
+            //width:40%; 
         }
         @include desktop {
             width: 30vw;
@@ -115,16 +126,16 @@
     &__textarea {
         font: $font-montserrat-light-15px;
         font-size: 12px;
-        width: 245.8px;
+        //width: 245.8px;
         background-color: #302c42;
         border-color: white;
-        border-radius: 40px;
-        height: 42.72px;
+        border-radius: 20px;
+        margin:auto;
+        width:90%; 
         color: #ffffff;
         padding-top: 10px;
-        height: 83.3px;
+        height: 85px;
         border: solid 2px;
-        margin-left: 10px;
         padding-left: 10px;
         @include tablet {
             width: 260px;
@@ -191,7 +202,7 @@
 
 .autor {
     border: none;
-    margin-left: 10px;
+    width:100%; 
     @include tablet {
 
     }
@@ -199,14 +210,14 @@
     &__input {
         font: $font-montserrat-light-15px;
         font-size: 12px;
-        width: 245.8px;
+        width: 100%; 
+        margin:auto; 
         height: 32.3px;
         background-color: #302c42;
         border-color: white;
         border-radius: 40px;
         height: 42.72px;
         color: #ffffff;
-        padding-left: 10px;
         border: solid 2px;
         @include tablet {
           width: 260px;
@@ -258,12 +269,14 @@
         }
       }
  }
- .card {
+
+
+/* .card {
      color: white;
      text-align: center;
      padding: 20px;
     @include tablet {
 
     }
- }
+ }*/
 
