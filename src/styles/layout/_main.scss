@@ -1,14 +1,17 @@
 
 html{
-  background-color: #302c42;
+  background-color: #b6e768;
   
 }
 
 .container {
 
-    background-color: #302c42;
-    height: 100vh;
-    padding: 20px;
+    //background-color: #302c42;
+    //background-color: #f6e6cc;
+   // height: 100vh;
+    //padding: 20px;
+    width:80%; 
+    margin:auto;
     @include tablet {
  
     }
@@ -47,7 +50,7 @@ html{
   .main .image {
     object-fit: cover;
     // width: 80vw;
-    width: 87vw;
+    width: 100%;
     height: 80%;
     
     @include tablet {
