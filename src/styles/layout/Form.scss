@@ -1,0 +1,261 @@
+@import "../core/mixins";
+@import "../core/variables";
+.form {
+  // margin-top: 100px;
+  margin-top: 8rem;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: solid 1px rgba(0, 0, 0, 0);
+  background-image: radial-gradient(circle at 50% 50%, #403a5f, #211e2e 92%);
+  font-family: "Montserrat";
+  @include tablet {
+    width: 40%;
+    margin-bottom: 90px;
+  }
+  @include desktop {
+    width: 330px;
+    width: 40%;
+    margin-bottom: 40px;
+    margin-top: 14rem;
+  }
+  @media all and (min-width: 1400px) {
+    margin-top: 7rem;
+  }
+  @media all and (min-width: 1600px) {
+    margin-top: 2rem;
+  }
+  &__title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    // margin-top: 10px;
+    margin-top: 1.5rem;
+    @include tablet {
+    }
+    @include desktop {
+      margin-left: 0.5px;
+    }
+  }
+
+  &__ask-info {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    @include tablet {
+    }
+
+    &__subtitle {
+      width: 200px;
+      height: 12.1px;
+      font-size: 15px;
+      padding-bottom: 10px;
+      margin-left: 20px;
+      @include tablet {
+        margin-left: 20px;
+      }
+      @include desktop {
+        // margin-left: 110px;
+        width: 21rem;
+        height: 1rem;
+        margin-left: 0;
+      }
+    }
+
+    &__line {
+      width: 100%;
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0)
+      );
+      @include tablet {
+      }
+    }
+  }
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 40%;
+  @include tablet {
+  }
+
+  &__input {
+    font: $font-montserrat-light-15px;
+    font-size: 12px;
+    width: 245 vw;
+    height: 32.3px;
+    background-color: #302c42;
+    border-color: white;
+    border-radius: 40px;
+    height: 42.72px;
+    color: #ffffff;
+    border: solid 2px;
+    margin-left: 10px;
+    padding-left: 10px;
+    @include tablet {
+      width: 260px;
+      margin-left: 10px;
+    }
+    @include desktop {
+      width: 30vw;
+      margin-left: 30px;
+    }
+  }
+
+  &__textarea {
+    font: $font-montserrat-light-15px;
+    font-size: 12px;
+    width: 245.8px;
+    background-color: #302c42;
+    border-color: white;
+    border-radius: 40px;
+    height: 42.72px;
+    color: #ffffff;
+    padding-top: 10px;
+    height: 83.3px;
+    border: solid 2px;
+    margin-left: 10px;
+    padding-left: 10px;
+    @include tablet {
+      width: 260px;
+    }
+    @include desktop {
+      width: 30vw;
+      margin-left: 30px;
+    }
+  }
+}
+
+.ask-info__autor {
+  text-align: center;
+  color: white;
+  margin-right: 5px;
+
+  &__subtitle {
+    width: 200px;
+    height: 12.1px;
+    font-size: 15px;
+    padding: 10px;
+    margin-left: 30px;
+    @include tablet {
+      margin-top: 10px;
+    }
+    @include desktop {
+      margin-left: 120px;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    border: 0px;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+    @include tablet {
+      width: 100%;
+      border: 0px;
+      height: 1px;
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0)
+      );
+    }
+    @include desktop {
+      width: 100%;
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0)
+      );
+    }
+  }
+}
+
+.autor {
+  border: none;
+  margin-left: 10px;
+  @include tablet {
+  }
+
+  &__input {
+    font: $font-montserrat-light-15px;
+    font-size: 12px;
+    width: 245.8px;
+    height: 32.3px;
+    background-color: #302c42;
+    border-color: white;
+    border-radius: 40px;
+    height: 42.72px;
+    color: #ffffff;
+    padding-left: 10px;
+    border: solid 2px;
+    @include tablet {
+      width: 260px;
+    }
+    @include desktop {
+      width: 30vw;
+      margin-left: 20px;
+    }
+  }
+}
+
+.buttons-img {
+  margin: 10px;
+
+  &__btn {
+    font: $font-montserrat-bold-12px;
+    width: 121.2px;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    border: none;
+    height: 38px;
+    background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+    border-radius: 40px;
+    margin: 5px;
+
+    @include tablet {
+      width: 125px;
+      margin-top: 20px;
+    }
+  }
+
+  &__btn-large {
+    font: $font-montserrat-bold-12px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+    text-align: center;
+    border: none;
+    height: 38px;
+    background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+    border-radius: 40px;
+    width: 200px;
+    border: solid 2px white;
+    @include tablet {
+      height: 44px;
+    }
+  }
+}
+.card {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  @include tablet {
+  }
+}
