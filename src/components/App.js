@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Preview  from "./Preview";
 import Form from "./Form";
 import Footer from "./Footer";
+import Landing from "./Landing";
 
 const defaultPhoto = "https://www.cientificascasio.com/assets/img/cientificas/related/ada-lovelace.png"; 
 const defaultImage = "https://mujeresconciencia.com/app/uploads/2015/06/sol.png"; 
@@ -129,11 +130,11 @@ function App() {
         <Header/>
          
         <main className='main'>
+          {/* <Landing /> */}
          <Preview 
          data={data}
          />
 
-          {/*   Form -  Patricia */}
           <Form 
           handleInput={handleInput}
           data={data}
@@ -143,6 +144,7 @@ function App() {
           handleClickCreateCard={handleClickCreateCard}
           errorMessageCard={errorMessageCard}
           />
+         
         </main>
         
       </div>
