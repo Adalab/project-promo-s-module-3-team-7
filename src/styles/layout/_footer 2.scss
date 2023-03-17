@@ -1,0 +1,19 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    margin-top: 5rem;
+    padding: 0 20px;
+    border-top: solid 1px #7a7885;
+    &__icon {
+        color: white;
+        font-size: 2rem;
+    }
+    &__logo {
+        &__logo-adalab {
+            width: 6rem;
+            height: 2rem;
+        }
+    }
+}
