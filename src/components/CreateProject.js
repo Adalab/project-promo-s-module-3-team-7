@@ -44,6 +44,8 @@ function CreateProject() {
     image: "",
   });
 
+  const [errorMessageCard, setErrorMessageCard] = useState('')
+
   
   const [url, setUrl] = useState("");
   const [cardMessage, setCardMessage] = useState (''); 
@@ -60,9 +62,12 @@ function CreateProject() {
  
     dataApi(data)
       .then(info => {
+
+
         if (info.success === true) {
           setUrl(info.cardURL);
           setCardMessage ('Tu tarjeta ha sido creada');
+          setErrorMessageCard('')
           
         
           // Cojo datos de LS
@@ -74,10 +79,12 @@ function CreateProject() {
 
           console.log (url);
         } else {
-          setCardMessage ('Faltan datos');
+          setCardMessage ('');
+          setErrorMessageCard ('Faltan datos, por favor rellena todos los campos');
         }
     });
   };
+
 
   
 
@@ -153,6 +160,8 @@ function CreateProject() {
           errorMessage={errorMessage}
           url={url}
           cardMessage={cardMessage}
+          handleClickCreateCard={handleClickCreateCard}
+          errorMessageCard={errorMessageCard}
           />
         </main>
         <Footer />
