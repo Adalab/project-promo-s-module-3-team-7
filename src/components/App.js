@@ -12,8 +12,8 @@ function App() {
 
   return(
     <Routes>
-      <Route path="/" element={<Landing/>}></Route>
-      <Route path="/create" element={<CreateProject/>}></Route>
+      <Route path="/" element={<Landing />}></Route>
+      <Route path="/create" element={<CreateProject />}></Route>
     </Routes>
 
   );

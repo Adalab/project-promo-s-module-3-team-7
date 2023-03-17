@@ -5,38 +5,44 @@ html {
 }
 
 .container {
-  background-color: #302c42;
-  height: 100vh;
-  padding: 20px;
-  @include tablet {
+
+    background-color: #302c42;
+    // height: 100vh;
+    padding: 20px;
+    @include tablet {
+ 
+    }
+    @include tablet {
+ 
+    }
   }
-  @include tablet {
-  }
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  height: 80vh;
-
-  @include tablet {
+  
+  .main {
     display: flex;
-    flex-direction: row;
-    // padding-top:100px;
-    width: 100%;
-    padding-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+
+    // height: 80vh;
+    
+    @include tablet {
+      display:flex;
+      flex-direction: row;
+      // padding-top:100px;
+      width: 100%;
+      padding-top: 2rem;
+
+ 
+    }
+    @include desktop {
+      // display:flex;
+      // flex-direction: row;
+      // padding-top:150px;
+      // align-items:center;
+      // width: 100vw;
+      padding-top: 1rem;
+
+    }
   }
-  @include desktop {
-    // display:flex;
-    // flex-direction: row;
-    // padding-top:150px;
-    // align-items:center;
-    // width: 100vw;
-    padding-top: 1rem;
-  }
-}
 
 .main .image {
   object-fit: cover;
@@ -75,15 +81,15 @@ html {
   color: red;
 }
 
-.errorMessage {
-  font: $font-poppins-ligth-10px;
-  color: #f52121;
-  margin-left: 1.2rem;
-  @include tablet {
-    font-size: 12px;
-    margin-left: 1rem;
+  .errorMessage {
+    font: $font-poppins-ligth-10px;
+    color: #ff4747;
+    margin-left: 1.2rem;
+    @include tablet {
+      font-size: 12px;
+      margin-left: 1rem;
+    }
+    @include desktop {
+      margin-left: 30px;
+    }
   }
-  @include desktop {
-    margin-left: 30px;
-  }
-}

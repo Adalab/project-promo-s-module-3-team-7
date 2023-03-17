@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import dataApi from '../services/api.js';
 import Header from './Header';
@@ -7,6 +6,7 @@ import Preview  from "./Preview";
 import Form from "./Form";
 import {Route, Routes} from 'react-router-dom';
 import Landing from "./Landing";
+import Footer from "./Footer.js";
 
 
 
@@ -155,6 +155,7 @@ function CreateProject() {
           cardMessage={cardMessage}
           />
         </main>
+        <Footer />
       </div>
     </div>
   );
