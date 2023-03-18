@@ -5,7 +5,7 @@
 .author {
   background-color: rgb(255, 255, 255);
   color: #3e3e3e;
-  width: 75vw;
+  width: 65vw;
   //height: 30%;
   transform: translateY(-50px);
   margin: auto;
@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: row-reverse;
   gap: 13px;
-  padding: 22px 25px 22px 25px;
+  padding: 22px 25px 20px 25px;
   //overflow-y: scroll;
 
   @include tablet {
