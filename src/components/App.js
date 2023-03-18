@@ -3,6 +3,7 @@ import {Route, Routes} from 'react-router-dom';
 import Landing from "./Landing";
 import CreateProject from "./CreateProject"; 
 import ls from '../services/localStorage';
+import GetAvatar from "./GetAvatar";
 
 
 function App() {

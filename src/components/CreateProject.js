@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from 'react';
 import dataApi from '../services/api.js';
 import Header from './Header';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,6 +8,7 @@ import Form from "./Form";
 import {Route, Routes} from 'react-router-dom';
 import Landing from "./Landing";
 import Footer from "./Footer.js";
+import GetAvatar from './GetAvatar';
 
 
 
@@ -62,8 +64,6 @@ function CreateProject() {
  
     dataApi(data)
       .then(info => {
-
-
         if (info.success === true) {
           setUrl(info.cardURL);
           setCardMessage ('Tu tarjeta ha sido creada');
@@ -87,6 +87,12 @@ function CreateProject() {
 
 
   
+  const updateAvatar = (avatar) => {
+    setData({ ...data, photo: avatar });
+   
+  };
+
+
 
      
   const handleInput = (inputValue, inputName) => {
@@ -152,6 +158,9 @@ function CreateProject() {
          <Preview 
          data={data}
          />
+            <Routes>
+     <Route path="getAvatar" element={<GetAvatar/>}></Route>
+    </Routes>
 
           {/*   Form -  Patricia */}
           <Form 
@@ -162,6 +171,8 @@ function CreateProject() {
           cardMessage={cardMessage}
           handleClickCreateCard={handleClickCreateCard}
           errorMessageCard={errorMessageCard}
+          updateAvatar={updateAvatar}
+       
           />
         </main>
         <Footer />

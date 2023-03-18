@@ -5,7 +5,7 @@
 .author {
   background-color: rgb(255, 255, 255);
   color: #3e3e3e;
-  width: 55vw;
+  width: 75vw;
   //height: 30%;
   transform: translateY(-50px);
   margin: auto;
@@ -13,15 +13,15 @@
   display: flex;
   flex-direction: row-reverse;
   gap: 13px;
-  padding: 22px 25px 5px 25px;
+  padding: 22px 25px 22px 25px;
   //overflow-y: scroll;
 
   @include tablet {
-    width: 65%;
+    width: 85%;
     //height:300px;
     padding: 0px 50px;
     gap: 22px;
-    margin-bottom: 30px;
+    margin-bottom: 300px;
   }
 
   &__ip {

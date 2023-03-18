@@ -1,39 +1,46 @@
 @import "../core/mixins";
 @import "../core/variables";
+* {
+      box-sizing: border-box;
+      margin: 0;
+}
+
 .form {
   // margin-top: 100px;
-  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border: solid 1px rgba(0, 0, 0, 0);
   background-image: radial-gradient(circle at 50% 50%, #403a5f, #211e2e 92%);
-  font-family: "Montserrat";
+  padding: 15px 20px;
   @include tablet {
-    width: 40%;
-    margin-bottom: 90px;
+  width: 40%;
+  
   }
   @include desktop {
-    width: 330px;
     width: 40%;
-    margin-bottom: 40px;
-    margin-top: 14rem;
+    height: 90%;
   }
   @media all and (min-width: 1400px) {
-    margin-top: 7rem;
+   // margin-top: 7rem;
   }
   @media all and (min-width: 1600px) {
-    margin-top: 2rem;
+   // margin-top: 2rem;
   }
   &__title {
+    color: white;
     text-align: center;
-    font-size: 30px;
-    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+   // font-weight: bold;
     color: white;
     // margin-top: 10px;
-    margin-top: 1.5rem;
+    font-weight: 700;
+    font-size: 25px;
     @include tablet {
     }
     @include desktop {
-      margin-left: 0.5px;
+      //margin-left: 0.5px;
     }
   }
 
@@ -45,19 +52,16 @@
     }
 
     &__subtitle {
-      width: 200px;
-      height: 12.1px;
+      font-weight: 300;
       font-size: 15px;
       padding-bottom: 10px;
-      margin-left: 20px;
+      font-family: "Montserrat", sans-serif;
       @include tablet {
-        margin-left: 20px;
+        
       }
       @include desktop {
         // margin-left: 110px;
-        width: 21rem;
-        height: 1rem;
-        margin-left: 0;
+        
       }
     }
 
@@ -80,74 +84,77 @@
 .project {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   border: none;
-  width: 40%;
+  width: 100%;
   @include tablet {
   }
 
   &__input {
     font: $font-montserrat-light-15px;
-    font-size: 12px;
-    width: 245 vw;
-    height: 32.3px;
     background-color: #302c42;
     border-color: white;
     border-radius: 40px;
-    height: 42.72px;
+    height: 40px;
     color: #ffffff;
-    border: solid 2px;
-    margin-left: 10px;
-    padding-left: 10px;
+    font-size: 12px;
+    padding-left: 15px;
+    padding-top: 3px;
+  
+    &::placeholder {
+      color: #ffffff;
+    }
+
     @include tablet {
-      width: 260px;
-      margin-left: 10px;
+     
     }
     @include desktop {
-      width: 30vw;
-      margin-left: 30px;
+      
     }
   }
 
   &__textarea {
     font: $font-montserrat-light-15px;
-    font-size: 12px;
-    width: 245.8px;
+    height: 100px;
     background-color: #302c42;
     border-color: white;
     border-radius: 40px;
-    height: 42.72px;
     color: #ffffff;
-    padding-top: 10px;
-    height: 83.3px;
-    border: solid 2px;
-    margin-left: 10px;
-    padding-left: 10px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+      overflow-y: hidden;
+    
+      &::placeholder {
+        color: #ffffff;
+      }
+
     @include tablet {
-      width: 260px;
+    
     }
     @include desktop {
-      width: 30vw;
-      margin-left: 30px;
+     
     }
   }
 }
 
 .ask-info__autor {
-  text-align: center;
-  color: white;
-  margin-right: 5px;
+    padding: 20px;
+    text-align: center;
+    color: white;
 
   &__subtitle {
-    width: 200px;
-    height: 12.1px;
+    padding-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
     font-size: 15px;
-    padding: 10px;
-    margin-left: 30px;
+    font-weight: 300;
+ 
     @include tablet {
-      margin-top: 10px;
+      
     }
     @include desktop {
-      margin-left: 120px;
+     
     }
   }
 
@@ -187,69 +194,88 @@
 }
 
 .autor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   border: none;
-  margin-left: 10px;
+  width: 100%;
   @include tablet {
   }
 
   &__input {
-    font: $font-montserrat-light-15px;
-    font-size: 12px;
-    width: 245.8px;
-    height: 32.3px;
     background-color: #302c42;
     border-color: white;
     border-radius: 40px;
-    height: 42.72px;
+    height: 40px;
     color: #ffffff;
-    padding-left: 10px;
-    border: solid 2px;
+    font-size: 12px;
+    padding-left: 15px;
+    padding-top: 3px;
+    
+      &::placeholder {
+        color: #ffffff;
+      }
     @include tablet {
-      width: 260px;
+      
     }
     @include desktop {
-      width: 30vw;
-      margin-left: 20px;
+      
     }
   }
 }
 
 .buttons-img {
-  margin: 10px;
+//  margin-right: 1.2rem;
+ //box-sizing: border-box;
 
+  @include tablet {
+     margin-left: 10px;
+  
+    }
+  
+    @include desktop {
+      margin-left: 20px;
+    }
   &__btn {
-    font: $font-montserrat-bold-12px;
-    width: 121.2px;
+    margin: 3px;
+    width: 120px;
     margin-top: 10px;
     color: white;
     text-align: center;
     border: none;
+    padding: 0 5px;
     height: 38px;
     background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
     border-radius: 40px;
-    margin: 5px;
-
     @include tablet {
-      width: 125px;
-      margin-top: 20px;
-    }
+       // margin-right: 5px;
+      }
+      @include desktop {
+        margin-left: 20px;
+      }
+   
   }
 
   &__btn-large {
-    font: $font-montserrat-bold-12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
-    margin-left: 10px;
     color: white;
     text-align: center;
-    border: none;
-    height: 38px;
+    padding: 0 5px;
+    height: 43px;
     background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
     border-radius: 40px;
-    width: 200px;
+    width: 180px;
     border: solid 2px white;
+    margin-left: 70px;
     @include tablet {
-      height: 44px;
+      margin-left: 45px;
     }
+    @include desktop {
+      margin-left: 80px;
+         }
   }
 }
 .card {
