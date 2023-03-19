@@ -225,9 +225,12 @@
 }
 
 .buttons-img {
-//  margin-right: 1.2rem;
- //box-sizing: border-box;
-
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 1rem;
   @include tablet {
      margin-left: 10px;
   
@@ -245,6 +248,7 @@
     border: none;
     padding: 0 5px;
     height: 38px;
+    box-shadow: 10px 5px 5px #000;
     background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
     border-radius: 40px;
     @include tablet {
@@ -278,10 +282,16 @@
          }
   }
 }
+
+
+
 .card {
   color: white;
   text-align: center;
   padding: 20px;
   @include tablet {
   }
+}
+.hidden {
+  display: none;
 }

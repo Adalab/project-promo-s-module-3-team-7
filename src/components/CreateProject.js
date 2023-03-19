@@ -55,6 +55,14 @@ function CreateProject() {
   //const patternName = new RegExp("^[a-zA-ZÀ-ÿ\s]{1,40}$");
   const patternName = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
 
+
+    const updateImages = (avatar) => {
+    setData({ ...data, image: avatar });
+  };
+  const updatePhoto = (avatar) => {
+    setData({ ...data, photo: avatar });
+  };
+
   // Funciones handle
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
@@ -171,7 +179,8 @@ function CreateProject() {
           cardMessage={cardMessage}
           handleClickCreateCard={handleClickCreateCard}
           errorMessageCard={errorMessageCard}
-          updateAvatar={updateAvatar}
+          updateImages={updateImages}
+          updatePhoto={updatePhoto}
        
           />
         </main>

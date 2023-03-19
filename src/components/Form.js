@@ -5,17 +5,14 @@ import { useState } from 'react';
 import GetAvatar from "./GetAvatar";
 import Profile from './/Profile';
 
-function Form({ handleInput, data, errorMessage, url, cardMessage , handleClickCreateCard, errorMessageCard}) {
+function Form({ handleInput, data, errorMessage, url, cardMessage , handleClickCreateCard, errorMessageCard, updatePhoto, updateImages
+}) {
   const handleInputChange = (ev) => {
     handleInput(ev.target.value, ev.target.name);
   };
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-  };
-   const [avatar, setAvatar] = useState('');
-    const updateAvatar = (avatar) => {
-    setAvatar(avatar);
   };
   
 
@@ -144,23 +141,22 @@ function Form({ handleInput, data, errorMessage, url, cardMessage , handleClickC
             <section className='buttons-img'>
              
             
-              <Button
+              <GetAvatar
               className='buttons-img__btn'
               text= 'Subir foto de proyecto'
+              updateAvatar={updateImages}
               handleClickCreateCard={handleClickCreateCard}
               />
 
               {/*lifting */}
-              <Button
+              <GetAvatar
               className='buttons-img__btn'
               text= 'Subir foto de autora'
+              updateAvatar={updatePhoto}
               handleClickCreateCard={handleClickCreateCard}
               />
 
-              <div>
-                 <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
-                 <Profile avatar={avatar} />
-              </div>
+              
 
             </section>
             <section className='buttons-img'>

@@ -58,17 +58,17 @@ function GetAvatar(props) {
     props.updateAvatar(image);
   };
 
-const avatar = props.avatar === '' ? defaultAvatar : props.avatar;
+//const avatar = props.avatar === '' ? defaultAvatar : props.avatar;
 
   
   return (
-    <div className="get-avatar">
-      <label className="get-avatar__label">
-        Get avatar!
+    <div className="buttons-img">
+      <label className="buttons-img__btn">
+        {props.text}
         <input
           type="file"
           ref={myFileField}
-          className="get-avatar__upload-field"
+          className="hidden"
           onChange={uploadImage}
         />
       </label>
