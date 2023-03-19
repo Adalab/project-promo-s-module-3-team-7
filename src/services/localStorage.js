@@ -12,6 +12,8 @@ function get(variable, valorPorDefecto) {
   function set(variable, valor) {
     localStorage.setItem(variable, JSON.stringify(valor));
   }
+
+
   
   // Función que nos indica si una variable está ya guardada en el localStorage
   function includes(variable) {
