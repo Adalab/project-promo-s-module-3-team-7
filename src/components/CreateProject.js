@@ -183,8 +183,8 @@ function CreateProject() {
        
           />
         </main>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
