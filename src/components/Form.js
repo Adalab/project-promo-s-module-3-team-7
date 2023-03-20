@@ -1,7 +1,12 @@
+import React from 'react';
 import "../styles/layout/Form.scss";
 import Button from "./Button";
+import { useState } from 'react';
+import GetAvatar from "./GetAvatar";
+import Profile from './/Profile';
 
-function Form({ handleInput, data, errorMessage, url, cardMessage , handleClickCreateCard, errorMessageCard}) {
+function Form({handleInput, data, errorMessage, url, cardMessage , handleClickCreateCard, errorMessageCard, updatePhoto, updateImages
+}) {
   const handleInputChange = (ev) => {
     handleInput(ev.target.value, ev.target.name);
   };
@@ -9,6 +14,8 @@ function Form({ handleInput, data, errorMessage, url, cardMessage , handleClickC
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
+  
+
   return (
     <section className='form'>
       <h2 className='form__title'>Información</h2>
@@ -132,17 +139,24 @@ function Form({ handleInput, data, errorMessage, url, cardMessage , handleClickC
             </fieldset>
 
             <section className='buttons-img'>
-              <Button
+             
+            
+              <GetAvatar
               className='buttons-img__btn'
               text= 'Subir foto de proyecto'
+              updateAvatar={updateImages}
               handleClickCreateCard={handleClickCreateCard}
               />
+
               {/*lifting */}
-              <Button
+              <GetAvatar
               className='buttons-img__btn'
               text= 'Subir foto de autora'
+              updateAvatar={updatePhoto}
               handleClickCreateCard={handleClickCreateCard}
               />
+
+              
 
             </section>
             <section className='buttons-img'>

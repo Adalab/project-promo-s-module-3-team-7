@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from 'react';
 import dataApi from '../services/api.js';
 import Header from './Header';
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,11 +9,12 @@ import Form from "./Form";
 //import Landing from "./Landing";
 import Footer from "./Footer.js";
 import ls from '../services/localStorage'; 
+import GetAvatar from './GetAvatar';
 
 
 
 
-const defaultPhoto = "https://www.cientificascasio.com/assets/img/cientificas/related/ada-lovelace.png"; 
+const  o = "https://www.cientificascasio.com/assets/img/cientificas/related/ada-lovelace.png"; 
 const defaultImage = "https://mujeresconciencia.com/app/uploads/2015/06/sol.png"; 
 
 
@@ -65,11 +67,19 @@ function CreateProject() {
   const [allCards, setAllCards] = useState (ls.get('projectsLS', [])); 
   
 
+
+    const updateImages = (avatar) => {
+    setData({ ...data, image: avatar });
+  };
+  const updatePhoto = (avatar) => {
+    setData({ ...data, photo: avatar });
+  };
+
   // Funciones handle
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
       // Esto es temporal:
-    setData({ ...data, image: defaultImage, photo: defaultPhoto});
+    setData({ ...data});
     console.log (url);
     console.log (data); 
  
@@ -149,6 +159,10 @@ function CreateProject() {
     }
   };
 
+  const handleErrorMessage = (value) =>{
+    setErrorMessage(value); 
+  }; 
+
   
   return (
     <div className='App'>
@@ -160,16 +174,23 @@ function CreateProject() {
          <Preview 
          data={data}
          />
+            <Routes>
+     <Route path="getAvatar" element={<GetAvatar/>}></Route>
+    </Routes>
 
           {/*   Form -  Patricia */}
           <Form 
           handleInput={handleInput}
           data={data}
           errorMessage={errorMessage}
+          handleErrorMessage={handleErrorMessage}
           url={url}
           cardMessage={cardMessage}
           handleClickCreateCard={handleClickCreateCard}
           errorMessageCard={errorMessageCard}
+          updateImages={updateImages}
+          updatePhoto={updatePhoto}
+       
           />
         </main>
         <Footer />
