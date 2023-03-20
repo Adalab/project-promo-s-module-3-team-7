@@ -2,6 +2,7 @@ import "../styles/App.scss";
 import {Route, Routes} from 'react-router-dom';
 import Landing from "./Landing";
 import CreateProject from "./CreateProject"; 
+import Error404 from "./Error404";
 import ls from '../services/localStorage';
 import GetAvatar from "./GetAvatar";
 
@@ -13,8 +14,10 @@ function App() {
 
   return(
     <Routes>
-      <Route path="/" element={<Landing />}></Route>
+      <Route path="/" element={<Landing />}>
+      </Route>
       <Route path="/create" element={<CreateProject />}></Route>
+      <Route path="*" element={<Error404 />}></Route>
     </Routes>
 
   );

@@ -1,9 +1,12 @@
 @import "../core/mixins";
 @import "../core/variables";
 
+.container__landing {
+    padding: 20px;
+}
+
 .main__landing {
     height: 70vh;
-    padding: 0 20px;
     &__container {
     margin-top: 2rem;
     display: flex;
@@ -33,6 +36,9 @@
             border-radius: 20px;
             background-image: linear-gradient(to bottom, $color-white, $color-white), linear-gradient(to bottom, $color-white 0%, rgba(0, 0, 0, 0));
             padding: 0.5rem;
+            &:hover {
+                cursor: pointer;
+            }
         }
         
         &__button-view-projects {
@@ -43,6 +49,9 @@
             border-radius: 20px;
             background-image: linear-gradient(to bottom, $color-top-gradient-violet, $color-top-gradient-violet), linear-gradient(to bottom, #2a2a2a 0%, rgba(0, 0, 0, 0));
             padding: 0.5rem;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }
