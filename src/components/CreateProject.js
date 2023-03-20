@@ -12,6 +12,7 @@ import GetAvatar from "./GetAvatar";
 import ls from "../services/localStorage";
 
 function CreateProject({ allCards, handleLs }) {
+
   const [data, setData] = useState(
     ls.get("lastCard", {
       name: "",
@@ -55,13 +56,14 @@ function CreateProject({ allCards, handleLs }) {
     setData({ ...data, photo: avatar });
   };
 
+
   // Funciones handle
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
     setData({ ...data });
     console.log(url);
     console.log(data);
-    
+ 
 
     dataApi(data).then((info) => {
       if (info.success === true) {
@@ -74,10 +76,10 @@ function CreateProject({ allCards, handleLs }) {
         handleLs([...allCards, data]);
 
         ls.set("projectsLS", allCards);
-        //ls.get('projectsLS', allCards);
-
-        // Vuelvo a guardar en el LS
+        
         console.log(url);
+        console.log (data); 
+        
         console.log(allCards);
       } else if (info.error.includes("Mandatory")) {
         setCardMessage("");
@@ -103,8 +105,7 @@ function CreateProject({ allCards, handleLs }) {
 
   const handleInput = (inputValue, inputName) => {
     setData({ ...data, [inputName]: inputValue });
-    console.log(inputName, inputValue);
-
+   
     if (inputName === "name") {
       validateRequired(inputValue, setErrorMessage, "name");
     }

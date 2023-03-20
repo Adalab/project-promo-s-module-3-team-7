@@ -1,8 +1,16 @@
+import "../styles/layout/ProjectItem.scss";
+
 const ProjectItem = ({eachCard}) => {
     // pasar por props eachProject ({eachProject})
 
     return (
-        <li>
+        <li className="pi">
+            <section className="pi__icons">
+                <a><i class="fa-regular fa-circle-xmark"></i>
+                </a>
+                <a href={`${eachCard.urlD}`} target='_blank'>
+                <i class="fa-solid fa-expand"></i></a>
+            </section>
             <section className='author'>
                 <section className='author__ip'>
                 <p className='author__ip__subtitle'>
