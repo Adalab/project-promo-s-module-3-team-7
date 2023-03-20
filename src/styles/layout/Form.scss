@@ -314,3 +314,10 @@
 .hidden {
   display: none;
 }
+
+.form__project {
+  width: 80vw;
+  @include tablet {
+    width: 35vw;
+  }
+}

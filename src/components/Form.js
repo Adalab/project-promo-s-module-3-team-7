@@ -32,7 +32,7 @@ function Form({
         <p className='form__ask-info__subtitle'>Cuéntanos sobre el proyecto</p>
         <hr className='form__ask-info__line' />
       </section>
-      <form onSubmit={handleSubmit}>
+      <form className="form__project" onSubmit={handleSubmit}>
         <fieldset className='project'>
           <input
             required
