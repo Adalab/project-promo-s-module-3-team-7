@@ -1,4 +1,4 @@
-import "../styles/layout/Card.scss";
+import "../styles/layout/_card.scss";
 import user from "../images/user.svg";
 
 function Card({ data }) {

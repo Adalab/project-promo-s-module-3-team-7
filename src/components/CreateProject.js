@@ -44,7 +44,7 @@ function CreateProject({ allCards, handleLs }) {
   const [errorMessageCard, setErrorMessageCard] = useState("");
   const [url, setUrl] = useState("");
   const [cardMessage, setCardMessage] = useState("");
-  const [classHidden, setClassHidden] = useState (true); 
+  const [classHidden, setClassHidden] = useState(true);
   const patternName = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
   const patternDemo =
     /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
@@ -59,6 +59,7 @@ function CreateProject({ allCards, handleLs }) {
 
   // Funciones handle
   const handleClickCreateCard = (ev) => {
+    console.log("create card");
     ev.preventDefault();
     setData({ ...data });
     console.log(url);
@@ -66,11 +67,13 @@ function CreateProject({ allCards, handleLs }) {
  
 
     dataApi(data).then((info) => {
+      console.log("info~~~~~~~");
+      console.log(info);
       if (info.success === true) {
         setUrl(info.cardURL);
         setCardMessage("Ver tarjeta");
         setErrorMessageCard("");
-        setClassHidden(false); 
+        setClassHidden(false);
         // Añado el nuevo proy
         ls.set("lastCard", data);
         handleLs([...allCards, data]);
@@ -84,14 +87,14 @@ function CreateProject({ allCards, handleLs }) {
       } else if (info.error.includes("Mandatory")) {
         setCardMessage("");
         setErrorMessageCard("Faltan datos.Por favor rellena todos los campos");
-        setClassHidden(true); 
+        setClassHidden(true);
       } else if (info.error.includes("Database error: ER_DATA_TOO_LONG")) {
         setCardMessage("");
         setErrorMessageCard("Las imágenes son demasiado grandes.");
-        setClassHidden(true); 
+        setClassHidden(true);
       } else {
         setCardMessage("");
-        setClassHidden(true); 
+        setClassHidden(true);
         setErrorMessageCard(
           "Se ha producido un error. Por favor, inténtalo más tarde "
         );
