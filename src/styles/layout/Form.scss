@@ -14,6 +14,7 @@
   border: solid 1px rgba(0, 0, 0, 0);
   background-image: radial-gradient(circle at 50% 50%, #403a5f, #211e2e 92%);
   padding: 15px 20px;
+  width: 100%;
   @include tablet {
   width: 40%;
   
@@ -86,8 +87,9 @@
   flex-direction: column;
   gap: 10px;
   border: none;
-  width: 100%;
+  width: 80vw;
   @include tablet {
+    width: 100%;
   }
 
   &__input {
@@ -224,7 +226,15 @@
   }
 }
 
+.buttons-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .buttons-img {
+  width: 12rem;
+  font: $font-montserrat-regular-10px;
   margin-top: 5px;
   display: flex;
   align-items: center;
@@ -240,8 +250,9 @@
       margin-left: 10px;
     }
   &__btn {
+    width: 80%;
     margin: 3px;
-    width: 120px;
+    // width: 120px;
     margin-top: 10px;
     color: white;
     text-align: center;
@@ -251,6 +262,9 @@
     box-shadow: 10px 5px 5px #000;
     background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
     border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @include tablet {
        // margin-right: 5px;
       }
@@ -259,7 +273,13 @@
       }
    
   }
+}
 
+.buttons-img-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   &__btn-large {
     display: flex;
     justify-content: center;
@@ -273,16 +293,15 @@
     border-radius: 40px;
     width: 180px;
     border: solid 2px white;
-    margin-left: 70px;
+    // margin-left: 70px;
     @include tablet {
       margin-left: 45px;
     }
     @include desktop {
       margin-left: 80px;
-         }
+          }
   }
 }
-
 
 
 .card {

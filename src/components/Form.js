@@ -129,7 +129,7 @@ function Form({
           <p className='errorMessage'>{errorMessage.job}</p>
         </fieldset>
 
-        <section className='buttons-img'>
+        <section className='buttons-images'>
           <GetAvatar
             className='buttons-img__btn'
             text='Subir foto de proyecto'
@@ -145,9 +145,9 @@ function Form({
             handleClickCreateCard={handleClickCreateCard}
           />
         </section>
-        <section className='buttons-img'>
+        <section className='buttons-img-2'>
           <Button
-            className='buttons-img__btn-large'
+            className='buttons-img-2__btn-large'
             text='Crear Tarjeta'
             handleClickCreateCard={handleClickCreateCard}
           />
