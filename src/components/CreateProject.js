@@ -61,14 +61,14 @@ function CreateProject({ allCards, handleLs }) {
     setData({ ...data });
     console.log(url);
     console.log(data);
-    //errorMessageCard.classList.toggle("hidden")
+    
 
     dataApi(data).then((info) => {
       if (info.success === true) {
         setUrl(info.cardURL);
         setCardMessage("Ver tarjeta");
         setErrorMessageCard("");
-
+        setClassHidden(false); 
         // Añado el nuevo proy
         ls.set("lastCard", data);
         handleLs([...allCards, data]);
@@ -82,11 +82,14 @@ function CreateProject({ allCards, handleLs }) {
       } else if (info.error.includes("Mandatory")) {
         setCardMessage("");
         setErrorMessageCard("Faltan datos.Por favor rellena todos los campos");
+        setClassHidden(true); 
       } else if (info.error.includes("Database error: ER_DATA_TOO_LONG")) {
         setCardMessage("");
         setErrorMessageCard("Las imágenes son demasiado grandes.");
+        setClassHidden(true); 
       } else {
         setCardMessage("");
+        setClassHidden(true); 
         setErrorMessageCard(
           "Se ha producido un error. Por favor, inténtalo más tarde "
         );
@@ -190,6 +193,7 @@ function CreateProject({ allCards, handleLs }) {
             errorMessageCard={errorMessageCard}
             updateImages={updateImages}
             updatePhoto={updatePhoto}
+            classHidden={classHidden}
           />
         </main>
       </div>

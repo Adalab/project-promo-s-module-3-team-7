@@ -15,6 +15,7 @@ function Form({
   errorMessageCard,
   updatePhoto,
   updateImages,
+  classHidden
 }) {
   const handleInputChange = (ev) => {
     handleInput(ev.target.value, ev.target.name);
@@ -159,7 +160,7 @@ function Form({
           <span className=''></span>
           <a
             href={`${url}`}
-            className='card__msg hidden'
+            className={`card__msg ${classHidden ? 'hidden' : true }`}
             target='_blank'
             rel='noreferrer'
             onSubmit={handleSubmit}>
