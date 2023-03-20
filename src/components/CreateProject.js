@@ -43,6 +43,7 @@ function CreateProject() {
   const [url, setUrl] = useState("");
   const [cardMessage, setCardMessage] = useState (''); 
   const patternName = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+  //const [allCards, setAllCards] = useState ([data]); 
   const [allCards, setAllCards] = useState (ls.get('projectsLS', [])); 
   
 
@@ -66,19 +67,27 @@ function CreateProject() {
           setUrl(info.cardURL);
           setCardMessage ('Tu tarjeta ha sido creada');
           setErrorMessageCard('')
-          setAllCards([...allCards, data]);
+          
           // Añado el nuevo proy
           ls.set ('lastCard', data); 
+          setAllCards([...allCards, data]);
+          
           ls.set('projectsLS', allCards);
+          //ls.get('projectsLS', allCards);
+          
           // Vuelvo a guardar en el LS
           console.log (url);
           console.log(allCards); 
            
-
-
-        } else {
+        } else if (info.error.includes('Mandatory')){
           setCardMessage ('');
           setErrorMessageCard ('Faltan datos.Por favor rellena todos los campos');
+        } else if (info.error.includes('Database error')) {
+          setCardMessage ('');
+          setErrorMessageCard ('Las imágenes son demasiado grandes.');
+        } else {
+          setCardMessage ('');
+          setErrorMessageCard ('Se ha producido un error. Por favor, inténtalo más tarde ');
         }
         
     });
