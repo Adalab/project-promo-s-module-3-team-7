@@ -1,4 +1,3 @@
-//  import 'layout/card';
 import "../styles/layout/Card.scss";
 import user from "../images/user.svg";
 

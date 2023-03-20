@@ -259,7 +259,7 @@
     border: none;
     padding: 0 5px;
     height: 38px;
-    box-shadow: 10px 5px 5px #000;
+    //box-shadow: 10px 5px 5px #000;
     background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
     border-radius: 40px;
     display: flex;
@@ -305,9 +305,27 @@
 
 
 .card {
-  color: white;
-  text-align: center;
-  padding: 20px;
+  
+  font-family: 'Montserrat';
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor:pointer; 
+ 
+ 
+  &__msg{
+    
+    width: 180px;
+    border-radius: 40px;
+    color: white;
+    background-color: aqua;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+  }
+
   @include tablet {
   }
 }

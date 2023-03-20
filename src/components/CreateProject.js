@@ -43,7 +43,7 @@ function CreateProject({ allCards, handleLs }) {
   const [errorMessageCard, setErrorMessageCard] = useState("");
   const [url, setUrl] = useState("");
   const [cardMessage, setCardMessage] = useState("");
-
+  const [classHidden, setClassHidden] = useState (true); 
   const patternName = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
   const patternDemo =
     /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
@@ -61,11 +61,12 @@ function CreateProject({ allCards, handleLs }) {
     setData({ ...data });
     console.log(url);
     console.log(data);
+    //errorMessageCard.classList.toggle("hidden")
 
     dataApi(data).then((info) => {
       if (info.success === true) {
         setUrl(info.cardURL);
-        setCardMessage("Tu tarjeta ha sido creada");
+        setCardMessage("Ver tarjeta");
         setErrorMessageCard("");
 
         // Añado el nuevo proy

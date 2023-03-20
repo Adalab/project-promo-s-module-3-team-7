@@ -159,7 +159,7 @@ function Form({
           <span className=''></span>
           <a
             href={`${url}`}
-            className='card'
+            className='card__msg hidden'
             target='_blank'
             rel='noreferrer'
             onSubmit={handleSubmit}>
