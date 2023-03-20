@@ -3,8 +3,11 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import ProjectList from "./ProjectList";
+import { useState } from "react";
+import ls from "../services/localStorage";
 
-function Landing() {
+function Landing({allCards}) {
+    
     return (
         <>
         <div className="container__landing">
@@ -28,7 +31,7 @@ function Landing() {
                         </button>
                     </div>
                 </div>
-                <ProjectList />
+                <ProjectList allCards={allCards} />
             </main>
         </div>
             <Footer />
