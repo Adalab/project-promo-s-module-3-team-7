@@ -123,7 +123,7 @@ function Form({handleInput, data, errorMessage, url, cardMessage , handleClickCr
           <GetAvatar
             className='buttons-img__btn'
             text='Subir foto de proyecto'
-            updateAvatar={updateImages}
+            updateAvatar={updatePhoto}
             handleClickCreateCard={handleClickCreateCard}
           />
 
@@ -131,7 +131,7 @@ function Form({handleInput, data, errorMessage, url, cardMessage , handleClickCr
           <GetAvatar
             className='buttons-img__btn'
             text='Subir foto de autora'
-            updateAvatar={updatePhoto}
+            updateAvatar={updateImages}
             handleClickCreateCard={handleClickCreateCard}
           />
         </section>

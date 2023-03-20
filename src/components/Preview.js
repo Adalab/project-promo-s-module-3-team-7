@@ -5,7 +5,7 @@
  function Preview ({data}) {
     return ( 
         <section className='preview'>
-          <img className='image' src={data.image || cover} alt='' />
+          <img className='image' src={data.photo || cover} alt='' />
 
           {/*   Card -  Almu */}
           <Card

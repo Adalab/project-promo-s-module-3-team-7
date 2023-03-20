@@ -9,22 +9,9 @@ import { Route, Routes } from "react-router-dom";
 import Landing from "./Landing";
 import Footer from "./Footer.js";
 import GetAvatar from "./GetAvatar";
+import ls from '../services/localStorage'
 
 function CreateProject() {
-  // variables de estado
-
-  // const [data, setData] = useState({
-  //   name: "",
-  //   slogan: "",
-  //   technologies: "",
-  //   repo: "",
-  //   demo: "",
-  //   desc: "",
-  //   autor: "",
-  //   job: "",
-  //   photo: "",
-  //   image: "",
-  // });
 
     const [data, setData] = useState(ls.get ('lastCard',{
     name: "",
@@ -69,7 +56,6 @@ function CreateProject() {
   // Funciones handle
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
-      // Esto es temporal:
     setData({ ...data});
     console.log (url);
     console.log (data); 
