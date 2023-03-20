@@ -44,8 +44,9 @@ function CreateProject() {
   const [url, setUrl] = useState("");
   const [cardMessage, setCardMessage] = useState("");
 
-  //const patternName = new RegExp("^[a-zA-ZÀ-ÿ\s]{1,40}$");
   const patternName = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+  const patternDemo =
+    /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
   const updateImages = (avatar) => {
     setData({ ...data, image: avatar });
@@ -99,11 +100,22 @@ function CreateProject() {
       validateRequired(inputValue, setErrorMessage, "technologies");
     }
     if (inputName === "repo") {
-      validateRequired(inputValue, setErrorMessage, "repo");
-      // añadir otra validacion
+      if (inputValue.length > 0 && !patternDemo.test(inputValue)) {
+        const clonedErrorMessages = { ...errorMessage };
+        clonedErrorMessages.repo = "* Introducir el enlace";
+        setErrorMessage(clonedErrorMessages);
+      } else {
+        validateRequired(inputValue, setErrorMessage, "repo");
+      }
     }
     if (inputName === "demo") {
-      validateRequired(inputValue, setErrorMessage, "demo");
+      if (inputValue.length > 0 && !patternDemo.test(inputValue)) {
+        const clonedErrorMessages = { ...errorMessage };
+        clonedErrorMessages.demo = "* Introducir el enlace";
+        setErrorMessage(clonedErrorMessages);
+      } else {
+        validateRequired(inputValue, setErrorMessage, "demo");
+      }
     }
     if (inputName === "desc") {
       validateRequired(inputValue, setErrorMessage, "desc");

@@ -62,7 +62,7 @@ function Form({
             type='text'
             name='repo'
             id='repo'
-            placeholder='Repo'
+            placeholder='https://github.com/enlacedeturepo'
             value={data.repo}
             onChange={handleInputChange}
           />
@@ -71,7 +71,7 @@ function Form({
             required
             className='project__input'
             type='text'
-            placeholder='Demo'
+            placeholder=' https://enlacedetuproyecto'
             name='demo'
             id='demo'
             value={data.demo}
@@ -79,6 +79,7 @@ function Form({
           />
           <p className='errorMessage'>{errorMessage.demo}</p>
           <input
+            required
             className='project__input'
             type='text'
             placeholder='Tecnologías'
@@ -87,7 +88,7 @@ function Form({
             value={data.technologies}
             onChange={handleInputChange}
           />
-          <p className='errorMessage'>{errorMessage.tech}</p>
+          <p className='errorMessage'>{errorMessage.technologies}</p>
           <textarea
             className='project__textarea'
             type='text'
