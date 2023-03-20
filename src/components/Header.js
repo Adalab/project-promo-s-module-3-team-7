@@ -15,7 +15,7 @@ function Header() {
         </a>
         <p className='text'>Proyectos Molones</p>
       </div>
-      <img className='logo-adalab' src={logoAdalab} />
+      <img className='logo-adalab' src={logoAdalab} alt='logo Adalab' />
     </header>
   );
 }

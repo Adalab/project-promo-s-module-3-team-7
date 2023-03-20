@@ -9,22 +9,23 @@ import { Route, Routes } from "react-router-dom";
 import Landing from "./Landing";
 import Footer from "./Footer.js";
 import GetAvatar from "./GetAvatar";
+import ls from "../services/localStorage";
 
-function CreateProject() {
-  // variables de estado
-
-  const [data, setData] = useState({
-    name: "",
-    slogan: "",
-    technologies: "",
-    repo: "",
-    demo: "",
-    desc: "",
-    autor: "",
-    job: "",
-    photo: "",
-    image: "",
-  });
+function CreateProject({ allCards, handleLs }) {
+  const [data, setData] = useState(
+    ls.get("lastCard", {
+      name: "",
+      slogan: "",
+      technologies: "",
+      repo: "",
+      demo: "",
+      desc: "",
+      autor: "",
+      job: "",
+      photo: "",
+      image: "",
+    })
+  );
 
   const [errorMessage, setErrorMessage] = useState({
     name: "",
@@ -40,7 +41,6 @@ function CreateProject() {
   });
 
   const [errorMessageCard, setErrorMessageCard] = useState("");
-
   const [url, setUrl] = useState("");
   const [cardMessage, setCardMessage] = useState("");
 
@@ -58,8 +58,9 @@ function CreateProject() {
   // Funciones handle
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
-
     setData({ ...data });
+    console.log(url);
+    console.log(data);
 
     dataApi(data).then((info) => {
       if (info.success === true) {
@@ -67,16 +68,27 @@ function CreateProject() {
         setCardMessage("Tu tarjeta ha sido creada");
         setErrorMessageCard("");
 
-        // Cojo datos de LS
-
         // Añado el nuevo proy
-        //ls.set('projectsLS', data);
-        // Vuelvo a guardar en el LS
+        ls.set("lastCard", data);
+        handleLs([...allCards, data]);
 
+        ls.set("projectsLS", allCards);
+        //ls.get('projectsLS', allCards);
+
+        // Vuelvo a guardar en el LS
         console.log(url);
+        console.log(allCards);
+      } else if (info.error.includes("Mandatory")) {
+        setCardMessage("");
+        setErrorMessageCard("Faltan datos.Por favor rellena todos los campos");
+      } else if (info.error.includes("Database error: ER_DATA_TOO_LONG")) {
+        setCardMessage("");
+        setErrorMessageCard("Las imágenes son demasiado grandes.");
       } else {
         setCardMessage("");
-        setErrorMessageCard("Faltan datos, por favor rellena todos los campos");
+        setErrorMessageCard(
+          "Se ha producido un error. Por favor, inténtalo más tarde "
+        );
       }
     });
   };
@@ -150,6 +162,10 @@ function CreateProject() {
     }
   };
 
+  const handleErrorMessage = (value) => {
+    setErrorMessage(value);
+  };
+
   return (
     <div className='App'>
       <div className='container'>
@@ -166,6 +182,7 @@ function CreateProject() {
             handleInput={handleInput}
             data={data}
             errorMessage={errorMessage}
+            handleErrorMessage={handleErrorMessage}
             url={url}
             cardMessage={cardMessage}
             handleClickCreateCard={handleClickCreateCard}
@@ -174,8 +191,8 @@ function CreateProject() {
             updatePhoto={updatePhoto}
           />
         </main>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
