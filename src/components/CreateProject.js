@@ -1,21 +1,14 @@
 import { useState } from "react";
-import React from 'react';
-import dataApi from '../services/api.js';
-import Header from './Header';
+import React from "react";
+import dataApi from "../services/api.js";
+import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Preview  from "./Preview";
+import Preview from "./Preview";
 import Form from "./Form";
-import {Route, Routes} from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 import Landing from "./Landing";
 import Footer from "./Footer.js";
-import GetAvatar from './GetAvatar';
-
-
-
-
-const defaultPhoto = "https://www.cientificascasio.com/assets/img/cientificas/related/ada-lovelace.png"; 
-const defaultImage = "https://mujeresconciencia.com/app/uploads/2015/06/sol.png"; 
-
+import GetAvatar from "./GetAvatar";
 
 function CreateProject() {
   // variables de estado
@@ -46,17 +39,15 @@ function CreateProject() {
     image: "",
   });
 
-  const [errorMessageCard, setErrorMessageCard] = useState('')
+  const [errorMessageCard, setErrorMessageCard] = useState("");
 
-  
   const [url, setUrl] = useState("");
-  const [cardMessage, setCardMessage] = useState (''); 
+  const [cardMessage, setCardMessage] = useState("");
 
   //const patternName = new RegExp("^[a-zA-ZÀ-ÿ\s]{1,40}$");
   const patternName = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
 
-
-    const updateImages = (avatar) => {
+  const updateImages = (avatar) => {
     setData({ ...data, image: avatar });
   };
   const updatePhoto = (avatar) => {
@@ -66,128 +57,115 @@ function CreateProject() {
   // Funciones handle
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
-      // Esto es temporal:
-    setData({ ...data, photo: defaultPhoto, image: defaultImage});
-    console.log (url);
- 
-    dataApi(data)
-      .then(info => {
-        if (info.success === true) {
-          setUrl(info.cardURL);
-          setCardMessage ('Tu tarjeta ha sido creada');
-          setErrorMessageCard('')
-          
-        
-          // Cojo datos de LS
-         
-          // Añado el nuevo proy
-          //ls.set('projectsLS', data);
-          // Vuelvo a guardar en el LS
-          
 
-          console.log (url);
-        } else {
-          setCardMessage ('');
-          setErrorMessageCard ('Faltan datos, por favor rellena todos los campos');
-        }
+    setData({ ...data });
+
+    dataApi(data).then((info) => {
+      if (info.success === true) {
+        setUrl(info.cardURL);
+        setCardMessage("Tu tarjeta ha sido creada");
+        setErrorMessageCard("");
+
+        // Cojo datos de LS
+
+        // Añado el nuevo proy
+        //ls.set('projectsLS', data);
+        // Vuelvo a guardar en el LS
+
+        console.log(url);
+      } else {
+        setCardMessage("");
+        setErrorMessageCard("Faltan datos, por favor rellena todos los campos");
+      }
     });
   };
 
-
-  
   const updateAvatar = (avatar) => {
     setData({ ...data, photo: avatar });
-   
   };
 
-
-
-     
   const handleInput = (inputValue, inputName) => {
-    setData({...data, [inputName]: inputValue}); 
-    console.log (inputName,inputValue); 
+    setData({ ...data, [inputName]: inputValue });
+    console.log(inputName, inputValue);
 
     if (inputName === "name") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired(inputValue, setErrorMessage, "name");
     }
     if (inputName === "slogan") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired(inputValue, setErrorMessage, "slogan");
     }
+
     if (inputName === "technologies") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired(inputValue, setErrorMessage, "technologies");
     }
     if (inputName === "repo") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired(inputValue, setErrorMessage, "repo");
       // añadir otra validacion
     }
     if (inputName === "demo") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired(inputValue, setErrorMessage, "demo");
     }
     if (inputName === "desc") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired(inputValue, setErrorMessage, "desc");
     }
     if (inputName === "autor") {
-      validateRequired (inputValue,setErrorMessage)
-      if (patternName.test(inputValue)) {
-        setErrorMessage(" ");
-      } else if (!patternName.test(inputValue)){
-        setErrorMessage("* Introducir solo letras");
+      if (inputValue.length > 0 && !patternName.test(inputValue)) {
+        const clonedErrorMessages = { ...errorMessage };
+        clonedErrorMessages.autor = "* Introducir solo letras";
+        setErrorMessage(clonedErrorMessages);
+      } else {
+        validateRequired(inputValue, setErrorMessage, "autor");
       }
     }
     if (inputName === "job") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired(inputValue, setErrorMessage, "job");
     }
     if (inputName === "photo") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired(inputValue, setErrorMessage);
     }
     if (inputName === "image") {
-      validateRequired (inputValue,setErrorMessage)
+      validateRequired(inputValue, setErrorMessage);
     }
   };
 
-
-   
-  const validateRequired = (inputValue,setError) => {
+  const validateRequired = (inputValue, setError, field) => {
     if (!inputValue) {
-      return setError("* Campo requerido");
+      const clonedErrorMessages = { ...errorMessage };
+      clonedErrorMessages[field] = "* Campo requerido";
+      setError(clonedErrorMessages);
     } else {
-      return setError(" ");
+      setError(" ");
     }
   };
-
 
   return (
     <div className='App'>
       <div className='container'>
+        <Header />
 
-        <Header/>
-         
         <main className='main'>
-         <Preview 
-         data={data}
-         />
-            <Routes>
-     <Route path="getAvatar" element={<GetAvatar/>}></Route>
-    </Routes>
+          <Preview data={data} />
+          <Routes>
+            <Route path='getAvatar' element={<GetAvatar />}></Route>
+          </Routes>
 
           {/*   Form -  Patricia */}
-          <Form 
-          handleInput={handleInput}
-          data={data}
-          errorMessage={errorMessage}
-          url={url}
-          cardMessage={cardMessage}
-          handleClickCreateCard={handleClickCreateCard}
-          errorMessageCard={errorMessageCard}
-          updateImages={updateImages}
-          updatePhoto={updatePhoto}
-       
+          <Form
+            handleInput={handleInput}
+            data={data}
+            errorMessage={errorMessage}
+            url={url}
+            cardMessage={cardMessage}
+            handleClickCreateCard={handleClickCreateCard}
+            errorMessageCard={errorMessageCard}
+            updateImages={updateImages}
+            updatePhoto={updatePhoto}
           />
         </main>
         <Footer />
       </div>
     </div>
   );
-};
+}
 
 export default CreateProject;
