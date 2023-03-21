@@ -25,10 +25,10 @@ function Card({ data }) {
             {data.technologies || "React JS, MongoDB"}
           </p>
           <div className='author__ip__tech__icons'>
-            <a className='icon' href={`${data.demo}`} target='_blank'>
+            <a className='icon' href={`${data.demo}`|| '#'} target='_blank'>
               <i className='fa-solid fa-globe'></i>
             </a>
-            <a href={`${data.repo}`} target='_blank'>
+            <a href={`${data.repo}` || '#'} target='_blank'>
               <i className='fa-brands fa-github'></i>
             </a>
           </div>
