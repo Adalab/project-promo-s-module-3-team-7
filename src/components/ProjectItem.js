@@ -1,15 +1,32 @@
 import "../styles/layout/ProjectItem.scss";
+// import ls from "../services/localStorage";
 
-const ProjectItem = ({eachCard}) => {
-    // pasar por props eachProject ({eachProject})
+const ProjectItem = ({eachCard, allCards, index}) => {
+    // Function to delete a selected card
+    // function deleteCard(ev){
+    //     ev.preventDefault();
+    //     const idSelected = ev.currentTarget.id;
+    //     const indexCard = allCards.findIndex(oneCard => oneCard.id === idSelected); 
+    //     allCards.splice(indexCard, 1);
+    // }
+    // const test = ls.get('projectsLS', allCards);
+
+    const deleteCardTest = (ev) => {
+        console.log('quiero borrar esta tarjeta')
+        const idCardSelected = ev.target.id
+        console.log(idCardSelected, 'idCardSelected');
+        console.log(ev)
+    }
 
     return (
         <li className="pi">
             <section className="pi__icons">
-                <a><i class="fa-regular fa-circle-xmark"></i>
+                <a onClick={deleteCardTest}>
+                    <i className="fa-regular fa-circle-xmark"></i>
                 </a>
                 <a href={`${eachCard.urlD}`} target='_blank'>
-                <i class="fa-solid fa-expand"></i></a>
+                    <i className="fa-solid fa-expand"></i>
+                </a>
             </section>
             <section className='author'>
                 <section className='author__ip'>
