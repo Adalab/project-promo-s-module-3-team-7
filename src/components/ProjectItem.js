@@ -6,10 +6,10 @@ const ProjectItem = ({eachCard}) => {
     return (
         <li className="pi">
             <section className="pi__icons">
-                <a><i class="fa-regular fa-circle-xmark"></i>
-                </a>
-                <a href={`${eachCard.urlD}`} target='_blank'>
-                <i class="fa-solid fa-expand"></i></a>
+                <a><i class="fa-regular fa-circle-xmark"></i></a>
+                
+                {/* <a href={`${eachCard.urlD}`} target='_blank'>
+                <i class="fa-solid fa-expand"></i></a> */}
             </section>
             <section className='author'>
                 <section className='author__ip'>
