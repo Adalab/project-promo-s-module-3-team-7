@@ -3,4 +3,11 @@
 
 .project__list{
     margin-top: 5rem;
+    &_ul {
+        @include desktop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+    }
 }

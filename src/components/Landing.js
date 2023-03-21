@@ -7,7 +7,7 @@ import { useState } from "react";
 import ls from "../services/localStorage";
 
 function Landing({allCards}) {
-     
+     console.log (allCards); 
     return (
         <>
         <div className="container__landing">

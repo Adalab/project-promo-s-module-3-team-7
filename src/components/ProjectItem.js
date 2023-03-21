@@ -1,15 +1,39 @@
 import "../styles/layout/ProjectItem.scss";
+// import ls from "../services/localStorage";
 
-const ProjectItem = ({eachCard}) => {
-    // pasar por props eachProject ({eachProject})
+const ProjectItem = ({eachCard, allCards, index}) => {
+    // Function to delete a selected card
+    // function deleteCard(ev){
+    //     ev.preventDefault();
+    //     const idSelected = ev.currentTarget.id;
+    //     const indexCard = allCards.findIndex(oneCard => oneCard.id === idSelected); 
+    //     allCards.splice(indexCard, 1);
+    // }
+    // const test = ls.get('projectsLS', allCards);
+
+    const deleteCardTest = (ev) => {
+        console.log('quiero borrar esta tarjeta')
+        const idCardSelected = ev.target.id
+        console.log(idCardSelected, 'idCardSelected');
+        console.log(ev)
+    }
 
     return (
         <li className="pi">
             <section className="pi__icons">
+<<<<<<< HEAD
                 <a><i class="fa-regular fa-circle-xmark"></i></a>
                 
                 {/* <a href={`${eachCard.urlD}`} target='_blank'>
                 <i class="fa-solid fa-expand"></i></a> */}
+=======
+                <a onClick={deleteCardTest}>
+                    <i className="fa-regular fa-circle-xmark"></i>
+                </a>
+                <a href={`${eachCard.urlD}`} target='_blank'>
+                    <i className="fa-solid fa-expand"></i>
+                </a>
+>>>>>>> af3544ed38d6b739bbafcf0048f675e8cffeb849
             </section>
             <section className='author'>
                 <section className='author__ip'>
