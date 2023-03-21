@@ -21,19 +21,12 @@ const ProjectItem = ({eachCard, allCards, index}) => {
     return (
         <li className="pi">
             <section className="pi__icons">
-<<<<<<< HEAD
-                <a><i class="fa-regular fa-circle-xmark"></i></a>
-                
-                {/* <a href={`${eachCard.urlD}`} target='_blank'>
-                <i class="fa-solid fa-expand"></i></a> */}
-=======
                 <a onClick={deleteCardTest}>
                     <i className="fa-regular fa-circle-xmark"></i>
                 </a>
                 <a href={`${eachCard.urlD}`} target='_blank'>
                     <i className="fa-solid fa-expand"></i>
                 </a>
->>>>>>> af3544ed38d6b739bbafcf0048f675e8cffeb849
             </section>
             <section className='author'>
                 <section className='author__ip'>
