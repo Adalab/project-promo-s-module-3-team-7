@@ -93,18 +93,17 @@
   }
 
   &__input {
-    font: $font-montserrat-light-15px;
+    font: $font-montserrat-light-12px;
     background-color: #302c42;
     border-color: white;
     border-radius: 40px;
     height: 40px;
     color: #ffffff;
-    font-size: 12px;
     padding-left: 15px;
     padding-top: 3px;
   
     &::placeholder {
-      color: #ffffff;
+      color: #aaaaaa;
     }
 
     @include tablet {
@@ -116,7 +115,7 @@
   }
 
   &__textarea {
-    font: $font-montserrat-light-15px;
+    font: $font-montserrat-light-12px;
     height: 100px;
     background-color: #302c42;
     border-color: white;
@@ -129,7 +128,7 @@
       overflow-y: hidden;
     
       &::placeholder {
-        color: #ffffff;
+        color: #aaaaaa;
       }
 
     @include tablet {
@@ -206,6 +205,7 @@
   }
 
   &__input {
+    font: $font-montserrat-light-12px;
     background-color: #302c42;
     border-color: white;
     border-radius: 40px;
@@ -216,7 +216,7 @@
     padding-top: 3px;
     
       &::placeholder {
-        color: #ffffff;
+        color: #aaaaaa;
       }
     @include tablet {
       
@@ -255,23 +255,24 @@
   }
   &__btn {
     margin: 3px;
-      margin-top: 20px;
-      color: white;
-      text-align: center;
-      border: none;
-      padding: 0 10px;
-      height: 38px;
-      // box-shadow: 10px 5px 5px #000;
-      background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
-      border-radius: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 0 10px;
+    height: 38px;
+    // box-shadow: 10px 5px 5px #000;
+    background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
     
       @include tablet {
         padding: 0 10px;
-    @include tablet {
+      @include tablet {
        // margin-right: 5px;
       }
       @include desktop {
@@ -288,6 +289,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 2rem;
 
   &__btn-large {
     margin-top: 10px;
@@ -299,6 +301,7 @@
     border-radius: 40px;
     border: solid 2px white;
     font-weight: bold;
+    cursor: pointer;
 
     @include tablet {
       padding: 0 40px;
@@ -324,14 +327,21 @@
  
  
   &__msg{
-    
     width: 180px;
+    height: 2rem;
     border-radius: 40px;
     color: white;
-    background-color: aqua;
+    background-color: $color-bottom-gradient-light-violet;
     text-decoration: none;
     text-align: center;
-    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border: solid 2px white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: wiggle 3s infinite;
   }
 
   @include tablet {
@@ -346,4 +356,14 @@
   @include tablet {
     width: 100%;
   }
+}
+
+.button-reset {
+  margin-top: 20px;
+  color: rgb(228, 39, 39);
+  padding: 10px;
+  background: white;
+  border-radius: 15rem;
+  border: none;
+  cursor: pointer;
 }

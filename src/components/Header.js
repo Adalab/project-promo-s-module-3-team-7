@@ -15,7 +15,9 @@ function Header() {
         </a>
         <p className='text'>Proyectos Molones</p>
       </div>
-      <img className='logo-adalab' src={logoAdalab} alt='logo Adalab' />
+      <a href="https://adalab.es/" target="_blank" className="footer__logo">
+        <img className='logo-adalab' src={logoAdalab} alt='logo Adalab' />
+      </a>
     </header>
   );
 }

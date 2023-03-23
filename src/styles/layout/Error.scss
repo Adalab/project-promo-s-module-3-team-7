@@ -50,9 +50,3 @@
         }
     }
 }
-
-.container {
-    @include desktop {
-        margin-top: 10rem;
-    }
-}

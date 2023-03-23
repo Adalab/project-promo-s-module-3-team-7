@@ -26,7 +26,6 @@ const Error404 = () => {
                     </Link>
                 </div>
             </div>
-            
         </main>
         
 

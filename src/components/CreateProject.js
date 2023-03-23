@@ -2,11 +2,9 @@ import { useState } from "react";
 import React from "react";
 import dataApi from "../services/api.js";
 import Header from "./Header";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Preview from "./Preview";
 import Form from "./Form";
 import { Route, Routes } from "react-router-dom";
-import Landing from "./Landing";
 import Footer from "./Footer.js";
 import GetAvatar from "./GetAvatar";
 import ls from "../services/localStorage";
@@ -86,7 +84,7 @@ function CreateProject({ allCards, handleLs }) {
         console.log(allCards);
       } else if (info.error.includes("Mandatory")) {
         setCardMessage("");
-        setErrorMessageCard("Faltan datos.Por favor rellena todos los campos");
+        setErrorMessageCard("Faltan datos. Por favor rellena todos los campos");
         setClassHidden(true);
       } else if (info.error.includes("Database error: ER_DATA_TOO_LONG")) {
         setCardMessage("");
@@ -102,9 +100,9 @@ function CreateProject({ allCards, handleLs }) {
     });
   };
 
-  const updateAvatar = (avatar) => {
-    setData({ ...data, photo: avatar });
-  };
+  // const updateAvatar = (avatar) => {
+  //   setData({ ...data, photo: avatar });
+  // };
 
   const handleInput = (inputValue, inputName) => {
     setData({ ...data, [inputName]: inputValue });
@@ -174,6 +172,21 @@ function CreateProject({ allCards, handleLs }) {
     setErrorMessage(value);
   };
 
+  const handleResetButton = () => {
+    setData({
+      name: "",
+      slogan: "",
+      technologies: "",
+      repo: "",
+      demo: "",
+      desc: "",
+      autor: "",
+      job: "",
+      photo: "",
+      image: ""
+    });
+  };
+
   return (
     <div className='App'>
       <div className='container'>
@@ -198,6 +211,7 @@ function CreateProject({ allCards, handleLs }) {
             updateImages={updateImages}
             updatePhoto={updatePhoto}
             classHidden={classHidden}
+            handleResetButton={handleResetButton}
           />
         </main>
       </div>

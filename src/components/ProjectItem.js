@@ -11,23 +11,23 @@ const ProjectItem = ({eachCard, allCards, index}) => {
     // }
     // const test = ls.get('projectsLS', allCards);
 
-    const deleteCardTest = (ev) => {
-        console.log('quiero borrar esta tarjeta')
-        const idCardSelected = ev.target.id
-        console.log(idCardSelected, 'idCardSelected');
-        console.log(ev)
-    }
+    // const deleteCardTest = (ev) => {
+    //     console.log('quiero borrar esta tarjeta')
+    //     const idCardSelected = ev.target.id
+    //     console.log(idCardSelected, 'idCardSelected');
+    //     console.log(ev)
+    // }
 
     return (
-        <li className="pi">
-            <section className="pi__icons">
+        <li>
+            {/* <section className="pi__icons">
                 <a onClick={deleteCardTest}>
                     <i className="fa-regular fa-circle-xmark"></i>
                 </a>
                 <a href={`${eachCard.urlD}`} target='_blank'>
                     <i className="fa-solid fa-expand"></i>
                 </a>
-            </section>
+            </section> */}
             <section className='author'>
                 <section className='author__ip'>
                 <p className='author__ip__subtitle'>

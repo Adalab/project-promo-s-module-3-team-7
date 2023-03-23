@@ -1,9 +1,7 @@
 import React from "react";
 import "../styles/layout/Form.scss";
 import Button from "./Button";
-import { useState } from "react";
 import GetAvatar from "./GetAvatar";
-import Profile from ".//Profile";
 
 function Form({
   handleInput,
@@ -15,7 +13,8 @@ function Form({
   errorMessageCard,
   updatePhoto,
   updateImages,
-  classHidden
+  classHidden,
+  handleResetButton
 }) {
   const handleInputChange = (ev) => {
     handleInput(ev.target.value, ev.target.name);
@@ -138,7 +137,6 @@ function Form({
             handleClickCreateCard={handleClickCreateCard}
           />
 
-          {/*lifting */}
           <GetAvatar
             className='buttons-img__btn'
             text='Subir foto de autora'
@@ -152,6 +150,9 @@ function Form({
             text='Crear Tarjeta'
             handleClickCreateCard={handleClickCreateCard}
           />
+          <button title="Haz click aquí para empezar desde cero" onClick={handleResetButton} className='button-reset'>
+            <i class='fa fa-refresh'></i>
+          </button>
 
           <p className='errorMessage'>{errorMessage.photo}</p>
           <p className='errorMessage'>{errorMessage.image}</p>
