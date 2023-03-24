@@ -8,9 +8,10 @@ import { Route, Routes } from "react-router-dom";
 import Footer from "./Footer.js";
 import GetAvatar from "./GetAvatar";
 import ls from "../services/localStorage";
+import { Link } from "react-router-dom";
+import Intro from "./Intro";
 
 function CreateProject({ allCards, handleLs }) {
-
   const [data, setData] = useState(
     ls.get("lastCard", {
       name: "",
@@ -54,7 +55,6 @@ function CreateProject({ allCards, handleLs }) {
     setData({ ...data, photo: avatar });
   };
 
-
   // Funciones handle
   const handleClickCreateCard = (ev) => {
     console.log("create card");
@@ -62,7 +62,6 @@ function CreateProject({ allCards, handleLs }) {
     setData({ ...data });
     console.log(url);
     console.log(data);
- 
 
     dataApi(data).then((info) => {
       console.log("info~~~~~~~");
@@ -77,10 +76,10 @@ function CreateProject({ allCards, handleLs }) {
         handleLs([...allCards, data]);
 
         ls.set("projectsLS", allCards);
-        
+
         console.log(url);
-        console.log (data); 
-        
+        console.log(data);
+
         console.log(allCards);
       } else if (info.error.includes("Mandatory")) {
         setCardMessage("");
@@ -106,7 +105,7 @@ function CreateProject({ allCards, handleLs }) {
 
   const handleInput = (inputValue, inputName) => {
     setData({ ...data, [inputName]: inputValue });
-   
+
     if (inputName === "name") {
       validateRequired(inputValue, setErrorMessage, "name");
     }
@@ -183,19 +182,19 @@ function CreateProject({ allCards, handleLs }) {
       autor: "",
       job: "",
       photo: "",
-      image: ""
+      image: "",
     });
   };
 
   return (
-    <div className='App'>
-      <div className='container'>
+    <div className="App">
+      <div className="container">
         <Header />
-
-        <main className='main'>
+        <Intro />
+        <main className="main">
           <Preview data={data} />
           <Routes>
-            <Route path='getAvatar' element={<GetAvatar />}></Route>
+            <Route path="getAvatar" element={<GetAvatar />}></Route>
           </Routes>
 
           {/*   Form -  Patricia */}
