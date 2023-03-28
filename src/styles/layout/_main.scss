@@ -27,6 +27,7 @@ html {
     flex-direction: column;
     padding-top: 30px;
     height: 100%;
+    overflow-y: scroll;
 
     // height: 80vh;
     
@@ -71,6 +72,7 @@ html {
 }
 
 .preview {
+  overflow-y: scroll;
   @include tablet {
     width: 60%;
   }
@@ -80,6 +82,9 @@ html {
     flex-direction: column;
     align-items: center;
   }
+}
+.autor{
+  overflow-y: scroll;
 }
 
 .header__link {
